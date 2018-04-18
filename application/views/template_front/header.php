@@ -88,10 +88,7 @@ $contact = $this->menu_m->select_contact()->row();
                                     $jmlOne        = $this->menu_m->count_category_one($maincategory_id)->row();
                                     if ($jmlOne->jml > 0) {
                                         $column        = (12/$jmlZero);
-                                    } else {
-                                        $column        = 12;
-                                    }
-                                    foreach($listLevelZero as $r) {
+                                        foreach($listLevelZero as $r) {
                                         $category_head = $r->category_id;
                                     ?>
                                     <div class="col-md-<?=$column;?>">
@@ -114,13 +111,29 @@ $contact = $this->menu_m->select_contact()->row();
                                         </ul>
                                     </div>
                                     <?php 
+                                        }
+                                    } else {
+                                    ?>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <?php 
+                                            foreach($listLevelZero as $r) {
+                                            ?>
+                                            <li>
+                                                <a href="<?=site_url('category/'.$r->maincategory_seo.'/'.$r->category_seo);?>"><?=ucwords(strtolower($r->category_name));?></a>
+                                            </li>
+                                            <?php
+                                            }
+                                            ?>
+                                        </ul>
+                                    </div>
+                                    <?php
                                     }
                                     ?>
                                 </div>
                             </div>
                         </li>
                         <?php } ?>
-
                         <li class="#"><a href="<?=site_url('calender');?>">ico calender</a></li>
                     </ul>
                 </nav>
