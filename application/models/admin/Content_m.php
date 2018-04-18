@@ -83,6 +83,7 @@ class Content_m extends CI_Model
         $menu_id = $this->input->post('id', 'true');
         $data    = array(
             'menu_title'  => trim(stripHTMLtags($this->input->post('title', 'true'))),
+            'menu_seo'    => seo_title(trim($this->input->post('title', 'true'))),
             'menu_desc'   => $this->input->post('desc', 'true'),
             'menu_update' => date('Y-m-d H:i:s'),
         );

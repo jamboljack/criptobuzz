@@ -136,9 +136,9 @@ if ($uri == 'home') {
     $span_block_1   = '';
     $span_block_2   = '';
     $information    = '';
-    $menu           = 'active open';
-    $span_menu_1    = '<span class="selected"></span>';
-    $span_menu_2    = 'open';
+    $menu           = '';
+    $span_menu_1    = '';
+    $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
     $article        = 'active';
@@ -278,11 +278,13 @@ if ($uri == 'home') {
                     </li>
                     <li class="<?=$category;?>"><a href="<?=site_url('admin/category');?>">
                         <i class="fa fa-location-arrow"></i> Category</a>
-                    </li>
-                    <li class="<?=$article;?>"><a href="<?=site_url('admin/article');?>">
-                        <i class="fa fa-location-arrow"></i> Article</a>
-                    </li>
+                    </li>                    
                 </ul>
+            </li>
+            <li class="tooltips <?=$article;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Article">
+                <a href="<?=site_url('admin/article');?>">
+                    <i class="icon-screen-tablet"></i><span class="title"> Article</span>
+                </a>
             </li>
             <li class="tooltips <?=$social;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Social Media">
                 <a href="<?=site_url('admin/social');?>">

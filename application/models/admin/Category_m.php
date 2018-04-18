@@ -79,7 +79,7 @@ class Category_m extends CI_Model
         $sql_progdi = $this->db->get('cripto_category');
         if ($sql_progdi->num_rows() > 0) {
             foreach ($sql_progdi->result_array() as $row) {
-                $result['0']                 = '- Choose Sub Category -';
+                $result['']                 = '- Choose Sub Category -';
                 $result[$row['category_id']] = trim($row['category_name'].' - '.$row['category_level']);
             }
         } else {
@@ -108,6 +108,15 @@ class Category_m extends CI_Model
         $this->db->select('*');
         $this->db->from('cripto_category');
         $this->db->where('category_id', $id);
+
+        return $this->db->get();
+    }
+
+    public function select_subcategory_by_id($category_id)
+    {
+        $this->db->select('*');
+        $this->db->from('cripto_category');
+        $this->db->where('category_id', $category_id);
 
         return $this->db->get();
     }

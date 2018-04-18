@@ -166,14 +166,10 @@ $(document).ready(function() {
         focusInvalid: false,
         ignore: "",
         rules: {
-            title: { required: true },
-            subtitle: { required: true },
-            icon: { required: true }
+            title: { required: true }
         },
         messages: {
-            title: { required :'Title required' },
-            subtitle: { required :'Sub Title required' },
-            icon: { required :'Icon required' }
+            title: { required :'Title required' }
         },
         invalidHandler: function (event, validator) {
             success.hide();
@@ -262,14 +258,10 @@ $(document).ready(function() {
         focusInvalid: false,
         ignore: "",
         rules: {
-            title: { required: true },
-            subtitle: { required: true },
-            icon: { required: true }
+            title: { required: true }
         },
         messages: {
-            title: { required :'Title required' },
-            subtitle: { required :'Sub Title required' },
-            icon: { required :'Icon required' }
+            title: { required :'Title required' }
         },
         invalidHandler: function (event, validator) {
             success.hide();

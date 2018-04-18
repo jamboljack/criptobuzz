@@ -71,6 +71,7 @@ class Information_m extends CI_Model
     {
         $data = array(
             'information_title'    => trim(stripHTMLtags($this->input->post('title', 'true'))),
+            'information_seo'      => seo_title(trim($this->input->post('title', 'true'))),
             'information_subtitle' => trim(stripHTMLtags($this->input->post('subtitle', 'true'))),
             'information_icon'     => trim(stripHTMLtags($this->input->post('icon', 'true'))),
             'information_desc'     => $this->input->post('desc', 'true'),
@@ -94,6 +95,7 @@ class Information_m extends CI_Model
         $information_id = $this->input->post('id', 'true');
         $data           = array(
             'information_title'    => trim(stripHTMLtags($this->input->post('title', 'true'))),
+            'information_seo'      => seo_title(trim($this->input->post('title', 'true'))),
             'information_subtitle' => trim(stripHTMLtags($this->input->post('subtitle', 'true'))),
             'information_icon'     => trim(stripHTMLtags($this->input->post('icon', 'true'))),
             'information_desc'     => $this->input->post('desc', 'true'),

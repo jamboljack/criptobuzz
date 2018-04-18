@@ -18,7 +18,7 @@ class Category extends CI_Controller
     {
         if ($this->session->userdata('logged_in_cripto')) {
             $data['listMain']     = $this->db->get('cripto_maincategory')->result();
-            $data['listCategory'] = $this->db->get('cripto_category')->result();
+            // $data['listCategory'] = $this->db->get('cripto_category')->result();
             $this->template->display('admin/master/category_view', $data);
         } else {
             $this->session->sess_destroy();
@@ -78,6 +78,12 @@ class Category extends CI_Controller
     {
         $data = $this->category_m->select_by_id($id)->row();
         echo json_encode($data);
+    }
+
+    public function get_data_subcategory($category_id)
+    {
+        $datax = $this->category_m->select_subcategory_by_id($category_id)->row();
+        echo json_encode($datax);
     }
 
     public function updatedata()

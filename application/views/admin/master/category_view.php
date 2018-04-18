@@ -151,7 +151,7 @@ $(document).ready(function() {
 // Reset Form Input
 function resetformInput() {
     $("#lstMain").val('');
-    $("#lstSubCategory").val('0');
+    $("#lstSubCategory").val('');
     $("#name").val('');
 
     var MValid = $("#formInput");
@@ -249,9 +249,28 @@ function edit_data(id) {
         success: function(data) {
             $('#id').val(data.category_id);
             $('#maincategory_id').val(data.maincategory_id);
-            $('#lstSubCategory_Id').val(data.category_head);
             $('#category_name').val(data.category_name);
-            // document.getElementById("lstSubCategory_Id").disabled = true;
+            
+            var category_id = data.category_head;
+            $.ajax({
+                url : "<?=site_url('admin/category/get_data_subcategory/');?>"+category_id,
+                type: "GET",
+                dataType: "JSON",
+                success: function(datax) {
+                    var $SubCategory = $("#SubCategory");
+                    $('#SubCategory').html("");
+                    var html = '<select class="form-control" name="lstSubCategory" id="lstSubCategory_Id">';
+                    if (datax == null || datax.category_head === 0) {
+                        html+='<option value="" selected>- Choose Sub Category -</option>';
+                    } else {
+                        html+='<option value="">- Choose Sub Category -</option>';
+                        html += '<option value="'+datax.category_id+'" selected>'+datax.category_name+' - '+datax.category_level+'</option>';
+                    }
+                    html += '</select>';
+                    $("#SubCategory").append(html);
+                }
+            });
+
             $('#formModalEdit').modal('show');
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -379,7 +398,7 @@ function ViewSubCategoryEdit() {
                     <div class="col-md-9">
                         <?php
                         $style_sub = 'class="form-control" id="lstSubCategory"';
-                        echo form_dropdown("lstSubCategory", array('0' => '- Choose Sub Category -'), '',$style_sub);
+                        echo form_dropdown("lstSubCategory", array('' => '- Choose Sub Category -'), '',$style_sub);
                         ?>
                     </div>
                 </div>
@@ -424,15 +443,8 @@ function ViewSubCategoryEdit() {
                 </div>
                 <div class="form-group">
                     <label class="col-md-3 control-label">Sub Category</label>
-                    <div class="col-md-9">
-                        <select class="form-control" name="lstSubCategory" id="lstSubCategory_Id">
-                            <option value="0">- Choose Sub Category -</option>
-                            <?php
-                            foreach($listCategory as $r) {
-                            ?>
-                            <option value="<?=$r->category_id;?>"><?=$r->category_name.' - '.$r->category_level;?></option>
-                            <?php } ?>
-                        </select>
+                    <div class="col-md-9" id="SubCategory">
+                        
                     </div>
                 </div>
                 <div class="form-group">

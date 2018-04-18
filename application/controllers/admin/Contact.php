@@ -42,8 +42,8 @@ class Contact extends CI_Controller
             $configThumb['source_image']   = '';
             $configThumb['maintain_ratio'] = true;
             $configThumb['overwrite']      = true;
-            $configThumb['width']          = 100;
-            $configThumb['height']         = 120;
+            $configThumb['width']          = 150;
+            $configThumb['height']         = 100;
             $this->load->library('image_lib');
 
             if (!$this->upload->do_upload('foto')) {

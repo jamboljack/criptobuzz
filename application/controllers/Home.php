@@ -13,16 +13,16 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $data['setting']        = $this->home_m->select_setting()->row(); // Title
-        $data['listSocial']     = $this->home_m->select_social()->result(); // Social
-        $data['about']          = $this->home_m->select_about()->row(); // About
-        $data['profil']         = $this->home_m->select_profil()->row(); // Profil
-        $data['listSkill']      = $this->home_m->select_skill()->result(); // Skills
-        $data['listMore']       = $this->home_m->select_more()->result(); // More
-        $data['listEducation']  = $this->home_m->select_education()->result(); // Education
-        $data['listExperience'] = $this->home_m->select_experience()->result(); // Experience
-        $data['listWork']       = $this->home_m->select_work()->result(); // Work
-        $this->template_front->display('home_view', $data);
+        // $data['setting']        = $this->home_m->select_setting()->row(); // Title
+        // $data['listSocial']     = $this->home_m->select_social()->result(); // Social
+        // $data['about']          = $this->home_m->select_about()->row(); // About
+        // $data['profil']         = $this->home_m->select_profil()->row(); // Profil
+        // $data['listSkill']      = $this->home_m->select_skill()->result(); // Skills
+        // $data['listMore']       = $this->home_m->select_more()->result(); // More
+        // $data['listEducation']  = $this->home_m->select_education()->result(); // Education
+        // $data['listExperience'] = $this->home_m->select_experience()->result(); // Experience
+        // $data['listWork']       = $this->home_m->select_work()->result(); // Work
+        $this->template_front->display('home_view');
     }
 
     public function send_data()
