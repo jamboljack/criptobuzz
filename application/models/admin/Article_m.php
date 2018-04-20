@@ -13,11 +13,21 @@ class Article_m extends CI_Model
         parent::__construct();
     }
 
-    public function select_category()
+    public function select_maincategory()
     {
         $this->db->select('*');
-        $this->db->from('alifa_category');
-        $this->db->order_by('category_name', 'asc');
+        $this->db->from('cripto_maincategory');
+        $this->db->order_by('maincategory_name', 'asc');
+
+        return $this->db->get();
+    }
+
+    public function select_category($article_id)
+    {
+        $this->db->select('c.*');
+        $this->db->from('cripto_category c');
+        $this->db->join('cripto_article a', 'a.category_id=c.category_id');
+        $this->db->where('a.article_id', $article_id);
 
         return $this->db->get();
     }
@@ -76,26 +86,43 @@ class Article_m extends CI_Model
         return $this->db->count_all_results();
     }
 
+    public function select_subcategory($maincategory_id)
+    {
+        $this->db->where('maincategory_id', $maincategory_id);
+        $this->db->order_by('category_id', 'asc');
+        $sql_progdi = $this->db->get('cripto_category');
+        if ($sql_progdi->num_rows() > 0) {
+            foreach ($sql_progdi->result_array() as $row) {
+                $result['']                  = '- Choose Sub Category -';
+                $result[$row['category_id']] = trim($row['category_name'] . ' - ' . $row['category_level']);
+            }
+        } else {
+            $result['0'] = '- No Sub Category -';
+        }
+        return $result;
+    }
+
     public function insert_data()
     {
         $data = array(
-            'user_username'  => $this->session->userdata('username'),
-            'category_id'    => $this->input->post('lstCategory', 'true'),
-            'article_title'  => strtoupper(trim(stripHTMLtags($this->input->post('name', 'true')))),
-            'article_seo'    => seo_title(stripHTMLtags($this->input->post('name', 'true'))),
-            'article_desc'   => trim($this->input->post('desc', 'true')),
-            'article_image'  => $this->upload->file_name,
-            'article_post'   => date('Y-m-d H:i:s'),
-            'article_update' => date('Y-m-d H:i:s'),
+            'user_username'   => $this->session->userdata('username'),
+            'maincategory_id' => $this->input->post('lstMain', 'true'),
+            'category_id'     => $this->input->post('lstSubCategory', 'true'),
+            'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
+            'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+            'article_desc'    => trim($this->input->post('desc', 'true')),
+            'article_image'   => $this->upload->file_name,
+            'article_post'    => date('Y-m-d H:i:s'),
+            'article_update'  => date('Y-m-d H:i:s'),
         );
 
-        $this->db->insert('alifa_article', $data);
+        $this->db->insert('cripto_article', $data);
     }
 
     public function select_by_id($id)
     {
         $this->db->select('*');
-        $this->db->from('alifa_article');
+        $this->db->from('cripto_article');
         $this->db->where('article_id', $id);
 
         return $this->db->get();
@@ -104,38 +131,37 @@ class Article_m extends CI_Model
     public function update_data()
     {
         $article_id = $this->input->post('id', 'true');
-
         if (!empty($_FILES['foto']['name'])) {
             $data = array(
-                'user_username'  => $this->session->userdata('username'),
-                'category_id'    => $this->input->post('lstCategory', 'true'),
-                'article_title'  => strtoupper(trim(stripHTMLtags($this->input->post('name', 'true')))),
-                'article_seo'    => seo_title(stripHTMLtags($this->input->post('name', 'true'))),
-                'article_desc'   => trim($this->input->post('desc', 'true')),
-                'article_image'  => $this->upload->file_name,
-                'article_post'   => date('Y-m-d H:i:s'),
-                'article_update' => date('Y-m-d H:i:s'),
+                'user_username'   => $this->session->userdata('username'),
+                'maincategory_id' => $this->input->post('lstMain', 'true'),
+                'category_id'     => $this->input->post('lstSubCategory', 'true'),
+                'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_desc'    => trim($this->input->post('desc', 'true')),
+                'article_image'   => $this->upload->file_name,
+                'article_update'  => date('Y-m-d H:i:s'),
             );
         } else {
             $data = array(
-                'user_username'  => $this->session->userdata('username'),
-                'category_id'    => $this->input->post('lstCategory', 'true'),
-                'article_title'  => strtoupper(trim(stripHTMLtags($this->input->post('name', 'true')))),
-                'article_seo'    => seo_title(stripHTMLtags($this->input->post('name', 'true'))),
-                'article_desc'   => trim($this->input->post('desc', 'true')),
-                'article_post'   => date('Y-m-d H:i:s'),
-                'article_update' => date('Y-m-d H:i:s'),
+                'user_username'   => $this->session->userdata('username'),
+                'maincategory_id' => $this->input->post('lstMain', 'true'),
+                'category_id'     => $this->input->post('lstSubCategory', 'true'),
+                'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_desc'    => trim($this->input->post('desc', 'true')),
+                'article_update'  => date('Y-m-d H:i:s'),
             );
         }
 
         $this->db->where('article_id', $article_id);
-        $this->db->update('alifa_article', $data);
+        $this->db->update('cripto_article', $data);
     }
 
     public function delete_data($id)
     {
         $this->db->where('article_id', $id);
-        $this->db->delete('alifa_article');
+        $this->db->delete('cripto_article');
     }
 }
 /* Location: ./application/models/admin/Article_m.php */

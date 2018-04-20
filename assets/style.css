@@ -246,7 +246,7 @@ a:hover, a:focus, a:active {
 .main-navigation>ul>li {
     display: inline-block;
     position: relative;
-    font-size: 13px;
+    font-size: 15px;
     padding: 20px;
 }
 /* .main-navigation > ul > li > a{
@@ -669,7 +669,7 @@ p.triger {
 }
 .slide-posts>.owl-controls>.owl-nav>div.owl-prev {
     left: 688px;
-    top: 330px;
+    top: 300px;
 }
 .list-post-block {
     margin-top: 30px;
@@ -685,7 +685,7 @@ p.triger {
 }
 .slide-posts>.owl-controls>.owl-nav>div.owl-next {
     right: 2px;
-    top: 398px
+    top: 368px
 }
 .post-block-style.post-float .post-thumb {
     float: left;

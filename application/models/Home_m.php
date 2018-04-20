@@ -9,83 +9,43 @@ class Home_m extends CI_Model
         parent::__construct();
     }
 
-    public function select_setting()
+    public function select_slider()
     {
         $this->db->select('*');
-        $this->db->from('my_setting');
-        $this->db->where('setting_id', 1);
+        $this->db->from('v_article');
+        $this->db->order_by('article_id', 'desc');
+        $this->db->limit(6);
 
         return $this->db->get();
     }
 
-    public function select_social()
+    public function select_latest_post()
     {
         $this->db->select('*');
-        $this->db->from('my_social');
-        $this->db->order_by('social_id', 'asc');
+        $this->db->from('v_article');
+        $this->db->order_by('article_id', 'desc');
+        $this->db->limit(5);
 
         return $this->db->get();
     }
 
-    public function select_about()
+    public function select_trend_post()
     {
         $this->db->select('*');
-        $this->db->from('my_setting');
-        $this->db->where('setting_id', 2);
+        $this->db->from('v_article');
+        $this->db->order_by('article_read', 'asc');
+        $this->db->limit(5);
 
         return $this->db->get();
     }
 
-    public function select_profil()
+    public function select_feature_small()
     {
         $this->db->select('*');
-        $this->db->from('my_profil');
-        $this->db->where('profil_id', 1);
-
-        return $this->db->get();
-    }
-
-    public function select_skill()
-    {
-        $this->db->select('*');
-        $this->db->from('my_skill');
-        $this->db->order_by('skill_name', 'asc');
-
-        return $this->db->get();
-    }
-
-    public function select_more()
-    {
-        $this->db->select('*');
-        $this->db->from('my_more');
-        $this->db->order_by('more_name', 'asc');
-
-        return $this->db->get();
-    }
-
-    public function select_education()
-    {
-        $this->db->select('*');
-        $this->db->from('my_education');
-        $this->db->order_by('education_id', 'desc');
-
-        return $this->db->get();
-    }
-
-    public function select_experience()
-    {
-        $this->db->select('*');
-        $this->db->from('my_experience');
-        $this->db->order_by('experience_id', 'desc');
-
-        return $this->db->get();
-    }
-
-    public function select_work()
-    {
-        $this->db->select('*');
-        $this->db->from('my_work');
-        $this->db->order_by('work_id', 'desc');
+        $this->db->from('v_article');
+        $this->db->where('article_feature', 2);
+        $this->db->order_by('article_id', 'asc');
+        $this->db->limit(3);
 
         return $this->db->get();
     }

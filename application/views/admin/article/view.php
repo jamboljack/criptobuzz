@@ -5,8 +5,8 @@
     function hapusData(article_id) {
         var id = article_id;
         swal({
-            title: 'Anda Yakin ?',
-            text: 'Data ini akan di Hapus !',
+            title: 'Are you Sure ?',
+            text: 'This Data will be Deleted !',
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -82,7 +82,7 @@
                                     <th width="5%"></th>
                                     <th width="5%">No</th>
                                     <th width="9%">Post</th>
-                                    <th width="15%">Main</th>
+                                    <th width="15%">Main Category</th>
                                     <th width="15%">Category</th>
                                     <th>Title</th>
                                     <th width="15%">Image</th>
@@ -116,7 +116,7 @@ $(document).ready(function() {
         "responsive": true,
         "processing": false,
         "serverSide": true,
-        "order": [2, 'asc'],
+        "order": [],
         "ajax": {
             "url": "<?=site_url('admin/article/data_list');?>",
             "type": "POST"
