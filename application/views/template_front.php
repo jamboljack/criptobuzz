@@ -152,13 +152,13 @@ $meta = $this->menu_m->select_meta()->row();
         </div>
     </div>
 
-        <script src="<?=base_url();?>assets/js/vendor/jquery-1.12.1.min.js"></script>
-        <script src="<?=base_url();?>assets/js/vendor/modernizr-3.5.0.min.js"></script>
-        <script src="<?=base_url();?>assets/js/bootstrap.min.js"></script>
-        <script src="<?=base_url();?>assets/js/owl.carousel.min.js"></script>
-        <script src="<?=base_url();?>assets/js/wow-1.3.0.min.js"></script>
-        <script src="<?=base_url();?>assets/js/jquery.slicknav.min.js"></script>
-        <script src="<?=base_url();?>assets/js/plugins.js"></script>
-        <script src="<?=base_url();?>assets/js/active.js"></script>
+    <script src="<?=base_url();?>assets/js/vendor/jquery-1.12.1.min.js"></script>
+    <script src="<?=base_url();?>assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="<?=base_url();?>assets/js/bootstrap.min.js"></script>
+    <script src="<?=base_url();?>assets/js/owl.carousel.min.js"></script>
+    <script src="<?=base_url();?>assets/js/wow-1.3.0.min.js"></script>
+    <script src="<?=base_url();?>assets/js/jquery.slicknav.min.js"></script>
+    <script src="<?=base_url();?>assets/js/plugins.js"></script>
+    <script src="<?=base_url();?>assets/js/active.js"></script>
     </body>
 </html>

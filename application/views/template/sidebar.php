@@ -16,6 +16,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -34,6 +35,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -52,6 +54,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -70,6 +73,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -88,6 +92,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -106,6 +111,7 @@ if ($uri == 'home') {
     $maincategory   = 'active';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -124,6 +130,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = 'active';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -142,6 +149,26 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = 'active';
+    $banner         = '';
+    $social         = '';
+    $message        = '';
+    $users          = '';
+} elseif ($uri == 'banner') {
+    $dashboard      = '';
+    $meta           = '';
+    $contact        = '';
+    $content        = '';
+    $block          = '';
+    $span_block_1   = '';
+    $span_block_2   = '';
+    $information    = '';
+    $menu           = '';
+    $span_menu_1    = '';
+    $span_menu_2    = '';
+    $maincategory   = '';
+    $category       = '';
+    $article        = '';
+    $banner         = 'active';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -160,6 +187,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = 'active';
     $message        = '';
     $users          = '';
@@ -178,6 +206,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = 'active';
     $users          = '';
@@ -196,6 +225,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = 'active';
@@ -214,6 +244,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $banner         = '';
     $social         = '';
     $message        = '';
     $users          = '';
@@ -284,6 +315,11 @@ if ($uri == 'home') {
             <li class="tooltips <?=$article;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Article">
                 <a href="<?=site_url('admin/article');?>">
                     <i class="icon-screen-tablet"></i><span class="title"> Article</span>
+                </a>
+            </li>
+            <li class="tooltips <?=$banner;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Banner">
+                <a href="<?=site_url('admin/banner');?>">
+                    <i class="fa fa-image"></i><span class="title"> Banner</span>
                 </a>
             </li>
             <li class="tooltips <?=$social;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Social Media">

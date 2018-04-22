@@ -105,6 +105,30 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-2 control-label">Featured ?</label>
+                                    <div class="col-md-3">
+                                        <div class="input-icon right"><i class="fa"></i>
+                                            <select class="form-control" name="lstFeature" required>
+                                                <option value="">- Choose Status Featured -</option>
+                                                <option value="1" <?php if ($detail->article_feature==1) { echo 'selected'; } ?>>No</option>
+                                                <option value="2" <?php if ($detail->article_feature==2) { echo 'selected'; } ?>>Yes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Recomend ?</label>
+                                    <div class="col-md-3">
+                                        <div class="input-icon right"><i class="fa"></i>
+                                            <select class="form-control" name="lstRecomend" required>
+                                                <option value="">- Choose Status Recomend -</option>
+                                                <option value="1" <?php if ($detail->article_recomend==1) { echo 'selected'; } ?>>No</option>
+                                                <option value="2" <?php if ($detail->article_recomend==2) { echo 'selected'; } ?>>Yes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-2 control-label">Image</label>
                                     <div class="col-md-10">
                                         <?php

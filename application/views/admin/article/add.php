@@ -92,6 +92,30 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-2 control-label">Featured ?</label>
+                                    <div class="col-md-3">
+                                        <div class="input-icon right"><i class="fa"></i>
+                                            <select class="form-control" name="lstFeature" required>
+                                                <option value="">- Choose Status Featured -</option>
+                                                <option value="1">No</option>
+                                                <option value="2">Yes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Recomend ?</label>
+                                    <div class="col-md-3">
+                                        <div class="input-icon right"><i class="fa"></i>
+                                            <select class="form-control" name="lstRecomend" required>
+                                                <option value="">- Choose Status Recomend -</option>
+                                                <option value="1">No</option>
+                                                <option value="2">Yes</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-2 control-label">Image</label>
                                     <div class="col-md-10">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -154,11 +178,15 @@ $(document).ready(function() {
         rules: {
             title: { required: true },
             lstMain: { required: true },
+            lstFeature: { required: true },
+            lstRecomend: { required: true },
             foto: { required: true }
         },
         messages: {
             title: { required :'Title required' },
             lstMain: { required :'Main Category required' },
+            lstFeature: { required :'Featured required' },
+            lstRecomend: { required :'Recomend required' },
             foto: { required :'Image required' }
         },
         invalidHandler: function (event, validator) {

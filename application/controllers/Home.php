@@ -11,12 +11,37 @@ class Home extends CI_Controller
         $this->load->model('home_m');
     }
 
-    public function index()
+    public function index($offset = 0)
     {
-        $data['listSlider']  = $this->home_m->select_slider()->result();
-        $data['listLatest']  = $this->home_m->select_latest_post()->result();
-        $data['listTrend']   = $this->home_m->select_trend_post()->result();
-        $data['listFeature'] = $this->home_m->select_feature_small()->result();
+        $data['TopBanner']        = $this->menu_m->select_banner_top()->row();
+        $data['SideBanner']       = $this->menu_m->select_banner_side()->row();
+        $data['listSlider']       = $this->home_m->select_slider()->result();
+        $data['listLatest']       = $this->home_m->select_latest_post()->result();
+        $data['listTrend']        = $this->home_m->select_trend_post()->result();
+        $data['listFeature']      = $this->home_m->select_feature_small()->result();
+        $data['listMain']         = $this->home_m->select_maincategory()->result();
+        $data['listRecomend']     = $this->home_m->select_recomended()->result();
+        $config['uri_segment']    = 3;
+        $config['base_url']       = site_url() . 'article/index';
+        $config['total_rows']     = $this->home_m->count_all();
+        $config['per_page']       = 10;
+        $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></div>';
+        $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';
+        $config['prev_tag_open']  = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link']      = '<i class="fa fa-chevron-right"></i>';
+        $config['next_tag_open']  = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['cur_tag_open']   = '<li class="active">';
+        $config['cur_tag_close']  = '</li>';
+        $config['num_tag_open']   = '<li>';
+        $config['num_tag_close']  = '</li>';
+        $config["num_links"]      = round($config["total_rows"] / $config["per_page"]);
+        $this->pagination->initialize($config);
+        $data['pages']       = $this->pagination->create_links();
+        $data['listArticle'] = $this->home_m->select_article($config['per_page'], $offset)->result();
+
         $this->template_front->display('front/home_view', $data);
     }
 

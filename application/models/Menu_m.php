@@ -113,5 +113,23 @@ class Menu_m extends CI_Model
 
         return $this->db->get();
     }
+
+    public function select_banner_top()
+    {
+        $this->db->select('*');
+        $this->db->from('cripto_banner');
+        $this->db->where('banner_position', 'Top');
+
+        return $this->db->get();
+    }
+
+    public function select_banner_side()
+    {
+        $this->db->select('*');
+        $this->db->from('cripto_banner');
+        $this->db->where('banner_position', 'Side');
+
+        return $this->db->get();
+    }
 }
 /* Location: ./application/model/Menu_m.php */

@@ -105,15 +105,17 @@ class Article_m extends CI_Model
     public function insert_data()
     {
         $data = array(
-            'user_username'   => $this->session->userdata('username'),
-            'maincategory_id' => $this->input->post('lstMain', 'true'),
-            'category_id'     => $this->input->post('lstSubCategory', 'true'),
-            'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
-            'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
-            'article_desc'    => trim($this->input->post('desc', 'true')),
-            'article_image'   => $this->upload->file_name,
-            'article_post'    => date('Y-m-d H:i:s'),
-            'article_update'  => date('Y-m-d H:i:s'),
+            'user_username'    => $this->session->userdata('username'),
+            'maincategory_id'  => $this->input->post('lstMain', 'true'),
+            'category_id'      => $this->input->post('lstSubCategory', 'true'),
+            'article_title'    => trim(stripHTMLtags($this->input->post('title', 'true'))),
+            'article_seo'      => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+            'article_desc'     => trim($this->input->post('desc', 'true')),
+            'article_feature'  => $this->input->post('lstFeature', 'true'),
+            'article_recomend' => $this->input->post('lstRecomend', 'true'),
+            'article_image'    => $this->upload->file_name,
+            'article_post'     => date('Y-m-d H:i:s'),
+            'article_update'   => date('Y-m-d H:i:s'),
         );
 
         $this->db->insert('cripto_article', $data);
@@ -133,24 +135,28 @@ class Article_m extends CI_Model
         $article_id = $this->input->post('id', 'true');
         if (!empty($_FILES['foto']['name'])) {
             $data = array(
-                'user_username'   => $this->session->userdata('username'),
-                'maincategory_id' => $this->input->post('lstMain', 'true'),
-                'category_id'     => $this->input->post('lstSubCategory', 'true'),
-                'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
-                'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
-                'article_desc'    => trim($this->input->post('desc', 'true')),
-                'article_image'   => $this->upload->file_name,
-                'article_update'  => date('Y-m-d H:i:s'),
+                'user_username'    => $this->session->userdata('username'),
+                'maincategory_id'  => $this->input->post('lstMain', 'true'),
+                'category_id'      => $this->input->post('lstSubCategory', 'true'),
+                'article_title'    => trim(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_seo'      => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_desc'     => trim($this->input->post('desc', 'true')),
+                'article_feature'  => $this->input->post('lstFeature', 'true'),
+                'article_recomend' => $this->input->post('lstRecomend', 'true'),
+                'article_image'    => $this->upload->file_name,
+                'article_update'   => date('Y-m-d H:i:s'),
             );
         } else {
             $data = array(
-                'user_username'   => $this->session->userdata('username'),
-                'maincategory_id' => $this->input->post('lstMain', 'true'),
-                'category_id'     => $this->input->post('lstSubCategory', 'true'),
-                'article_title'   => trim(stripHTMLtags($this->input->post('title', 'true'))),
-                'article_seo'     => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
-                'article_desc'    => trim($this->input->post('desc', 'true')),
-                'article_update'  => date('Y-m-d H:i:s'),
+                'user_username'    => $this->session->userdata('username'),
+                'maincategory_id'  => $this->input->post('lstMain', 'true'),
+                'category_id'      => $this->input->post('lstSubCategory', 'true'),
+                'article_title'    => trim(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_seo'      => seo_title(stripHTMLtags($this->input->post('title', 'true'))),
+                'article_desc'     => trim($this->input->post('desc', 'true')),
+                'article_feature'  => $this->input->post('lstFeature', 'true'),
+                'article_recomend' => $this->input->post('lstRecomend', 'true'),
+                'article_update'   => date('Y-m-d H:i:s'),
             );
         }
 
