@@ -89,7 +89,17 @@ class Home_m extends CI_Model
     function select_recomended() {
         $this->db->select('*');
         $this->db->from('v_article');
+        $this->db->where('article_recomend', 2);
         $this->db->order_by('article_id', 'desc');
+        $this->db->limit(5);
+
+        return $this->db->get();
+    }
+
+    function select_most_popular() {
+        $this->db->select('*');
+        $this->db->from('v_article');
+        $this->db->order_by('article_read', 'asc');
         $this->db->limit(5);
 
         return $this->db->get();

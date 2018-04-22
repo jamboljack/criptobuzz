@@ -1,19 +1,3 @@
-<?php 
-if (!empty($TopBanner->banner_image)) { 
-?>
-<section class="ads_area clearfix">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a href="<?=$TopBanner->banner_url;?>" target="_blank">
-                    <img src="<?=base_url('img/banner_folder/'.$TopBanner->banner_image);?>" alt="ads">
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<?php } ?>
-
 <section class="slider_post clearfix">
     <div class="container">
         <div class="row">
@@ -481,220 +465,126 @@ if (!empty($TopBanner->banner_image)) {
                                         <div class="section-title text-center">
                                             <h2>CRIPTOCOINS<br> CONVERTER</h2>
                                         </div>
-                                        <script src="https://www.cryptonator.com/ui/js/widget/calc_widget.js"></script>
                                     </div>
                                 </div>
                                 
                                 <div class="ico_calender_mini wow fadeInUp">
                                     <div class="has-no-title widget ico_calendar_widget-2 widget_ico_calendar_widget">
                                         <span class="widget-title font-weight-bold">ICO CALENDAR</span>
-                                            <div class="ico-widget divider">
-                                                <div class="col-md-4">
-                                                    <div class="row">
+                                        <div class="ico-widget divider">
+                                            <div class="col-md-4">
+                                                <div class="row">
                                                         
-                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="view_all text-center ">
-                                                <a href="<?=site_url('ico');?>" class="btn_large view_all text-center" data-load="Load More" data-loading="Loading..."> View all ICOs</a>
-                                            </div>
+                                        </div>
+                                        <div class="view_all text-center">
+                                            <a href="<?=site_url('ico');?>" class="btn_large view_all text-center" data-load="Load More" data-loading="Loading..."> View all ICOs</a>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="sidebar sidebar-right  wow fadeInUp">
-                                        <div class="subscribe-me text-center">
-                                            <h5>Subscribe to our mailing list to receives daily updates direct to your inbox!</h5>
-                                            <form action="#" method="post" id="popup-subscribe-form" name="subscribe-form">
-                                                <div class="input-group">
-                                                    <input placeholder="Enter your email" name="email" type="text">
-                                                    <button type="submit" name="subscribe">sign up</button>
-                                                    <p class="note">*we hate spam as much as you do</p>
-                                                </div>
-                                            </form>
+                                <div class="sidebar sidebar-right  wow fadeInUp">
+                                    <div class="subscribe-me text-center">
+                                        <h5>Subscribe to our mailing list to receives daily updates direct to your inbox!</h5>
+                                        <form action="#" method="post" id="popup-subscribe-form" name="subscribe-form">
+                                        <div class="input-group">
+                                            <input placeholder="Enter your email" name="email" type="text">
+                                            <button type="submit" name="subscribe">sign up</button>
+                                            <p class="note">*we hate spam as much as you do</p>
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="Stay_conected wow fadeInUp">
+                                    <div class="Stay_conected_title ">
+                                        <h5 class=" header-color inline-block uppercase">Stay Conected</h5>
+                                        <hr>
+                                        <div class="social-media-inner">
+                                            <ul class="social-media clearfix">
+                                                <li>
+                                                    <a href="#" class="fb">
+                                                        <i class="fa fa-facebook"></i>
+                                                        <div>887</div>
+                                                        <p>Fans</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="twitter">
+                                                        <i class="fa fa-twitter"></i>
+                                                        <div>327</div>
+                                                        <p>Followers</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="g_plus">
+                                                        <i class="fa fa-google-plus"></i>
+                                                        <div>15.4 k</div>
+                                                        <p>Followers</p>
+                                                    </a>
+                                                </li>
+                                            </ul>
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="Stay_conected wow fadeInUp">
-                                        <div class="Stay_conected_title ">
-                                            <h5 class=" header-color inline-block uppercase">Stay Conected</h5>
-                                            <hr>
-
-                                            <div class="social-media-inner">
-                                                <ul class="social-media clearfix">
-                                                    <li>
-                                                        <a href="#" class="fb">
-                                                            <i class="fa fa-facebook"></i>
-                                                            <div>887</div>
-                                                            <p>Fans</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="twitter">
-                                                            <i class="fa fa-twitter"></i>
-                                                            <div>327</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" class="g_plus">
-                                                            <i class="fa fa-google-plus"></i>
-                                                            <div>15.4 k</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="wk">
-                                                            <i class="fa fa-vk"></i>
-                                                            <div>140.6 k</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="be">
-                                                            <i class="fa fa-behance"></i>
-                                                            <div>44</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="instagram">
-                                                            <i class="fa fa-instagram"></i>
-                                                            <div>2,035</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" class="you_tube">
-                                                            <i class="fa fa-youtube-play"></i>
-                                                            <div>7,820</div>
-                                                            <p>Subscribers</p>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" class="flicker">
-                                                            <i class="fa fa-flickr"></i>
-                                                            <div>664k</div>
-                                                            <p>Followers</p>
-                                                        </a>
-                                                    </li>
-
-                                                    <li>
-                                                        <a href="#" class="Souncloud">
-                                                            <i class="fa fa-soundcloud"></i>
-                                                            <div>664k</div>
-                                                            <p>Followers</p>
-                                                        </a>
+                                <div class="recomended wow fadeInDown">
+                                    <div class="recomended_title">
+                                        <h5 class=" header-color inline-block uppercase">recomended</h5>
+                                    </div>
+                                    <hr>
+                                    <?php foreach($listRecomend as $r) { ?>
+                                    <div class="post-block-science post-float clearfix">
+                                        <div class="post-thumb">
+                                            <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
+                                        </div>
+                                        <div class="post-content">
+                                            <h5 class="post-title-title-small">
+                                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a>
+                                            </h5>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta">
+                                                        <i class="fa fa-clock-o"></i><a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->article_post));?></a>
                                                     </li>
                                                 </ul>
-                                                <!-- /.social icon -->
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="recomended wow fadeInDown">
-                                        <div class="recomended_title">
-                                            <h5 class=" header-color inline-block uppercase">recomended</h5>
-                                        </div>
-                                        <hr>
-                                        <?php foreach($listRecomend as $r) { ?>
-                                        <div class="post-block-science post-float clearfix">
-                                            <div class="post-thumb">
-                                                <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
-                                            </div>
-
-                                            <div class="post-content">
-                                                <h5 class="post-title-title-small">
-                                                    <a href="#">Tacos ditched the naked chicken chalupa </a>
-                                                </h5>
-                                                <div class="zm-post-meta">
-                                                    <ul>
-                                                        <li class="s-meta">
-                                                            <a href="#" class="zm-author"></a>
-                                                        </li>
-                                                        <li class="s-meta">
-                                                            <i class="fa fa-clock-o"></i><a href="#" class="zm-date">April 18, 2016</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <?php } ?>
-                                    </div>
-
-                                    <div class="most_Popular wow fadeInDown">
-                                        <div class="most_popular-title">
-                                            <h5 class=" header-color inline-block uppercase">Most Popular</h5>
-                                        </div>
-                                        <hr>
-                                        <div class="post_popular">
-                                            <div class="post-thumb">
-                                                <a class="post_category_bottom" href="#">bitcoin</a>
-                                                <img class="img-responsive" src="assets/images/mostpopuler/post3.jpg" alt="">
-                                            </div>
-                                            <div class="articel">
-                                                <h4>Off to the Races: The Competition for the Most Popular</h4>
-                                                <div class="zm-post-meta">
-                                                    <ul>
-                                                        <li class="s-meta">
-                                                            <a href="#" class="zm-author"></a>
-                                                        </li>
-                                                        <li class="s-meta">
-                                                            <i class="fa fa-clock-o"></i><a href="#" class="zm-date">April 18, 2016</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end post_popular -->
-
-
-                                        <div class="post_popular">
-                                            <div class="post-thumb">
-
-                                                <a class="post_category_bottom" href="#">bitcoin</a>
-                                                <img class="img-responsive" src="assets/images/mostpopuler/post2.jpg" alt="">
-
-                                            </div>
-
-                                            <div class="articel">
-                                                <h4>
-                                                            Off to the Races: The Competition for the Most Popular
-                                                        </h4>
-
-                                                <div class="zm-post-meta">
-                                                    <ul>
-                                                        <li class="s-meta">
-                                                            <a href="#" class="zm-author"></a>
-                                                        </li>
-                                                        <li class="s-meta">
-                                                            <i class="fa fa-clock-o"></i><a href="#" class="zm-date">April 18, 2016</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end post_popular -->
-
-
-                                    </div>
-                                    <!-- end  most pular Post 1 -->
-
-
+                                    <?php } ?>
                                 </div>
-                                <!--  end row -->
-                            </div>
-                            <!-- end container -->
 
+                                <div class="most_Popular wow fadeInDown">
+                                    <div class="most_popular-title">
+                                        <h5 class=" header-color inline-block uppercase">Most Popular</h5>
+                                    </div>
+                                    <hr>
+                                    <?php foreach($listMost as $r) { ?>
+                                    <div class="post_popular">
+                                        <div class="post-thumb">
+                                            <a class="post_category_bottom" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
+                                            <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
+                                        </div>
+                                        <div class="articel">
+                                            <h4><a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta">
+                                                        <i class="fa fa-clock-o"></i><a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->article_post));?></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
-
                 </div>
-                <!-- end col-md-4 sidebar-->
-
             </div>
         </div>
     </div>
-    <!--  end content_wraper-->
+</div>

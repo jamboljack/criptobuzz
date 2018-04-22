@@ -13,14 +13,13 @@ class Home extends CI_Controller
 
     public function index($offset = 0)
     {
-        $data['TopBanner']        = $this->menu_m->select_banner_top()->row();
-        $data['SideBanner']       = $this->menu_m->select_banner_side()->row();
         $data['listSlider']       = $this->home_m->select_slider()->result();
         $data['listLatest']       = $this->home_m->select_latest_post()->result();
         $data['listTrend']        = $this->home_m->select_trend_post()->result();
         $data['listFeature']      = $this->home_m->select_feature_small()->result();
         $data['listMain']         = $this->home_m->select_maincategory()->result();
         $data['listRecomend']     = $this->home_m->select_recomended()->result();
+        $data['listMost']         = $this->home_m->select_most_popular()->result();
         $config['uri_segment']    = 3;
         $config['base_url']       = site_url() . 'article/index';
         $config['total_rows']     = $this->home_m->count_all();
