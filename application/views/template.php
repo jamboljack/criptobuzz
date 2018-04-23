@@ -31,7 +31,7 @@ $meta = $this->menu_m->select_meta()->row();
 <script src="<?=base_url();?>backend/assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
 </head>
 
-<body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-fixed page-sidebar-closed-hide-logo">
+<body class="page-md page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo">
 <?=$_header;?>
 <div class="clearfix"></div>
 <div class="page-container">

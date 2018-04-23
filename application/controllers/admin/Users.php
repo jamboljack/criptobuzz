@@ -70,7 +70,7 @@ class Users extends CI_Controller
     private function user_exists($username)
     {
         $this->db->where('user_username', $username);
-        $query = $this->db->get('alifa_users');
+        $query = $this->db->get('cripto_users');
         if ($query->num_rows() > 0) {
             return true;
         } else {
@@ -92,7 +92,7 @@ class Users extends CI_Controller
     private function email_exists($email)
     {
         $this->db->where('user_email', $email);
-        $query = $this->db->get('alifa_users');
+        $query = $this->db->get('cripto_users');
         if ($query->num_rows() > 0) {
             return true;
         } else {

@@ -119,7 +119,7 @@
                             <img src="<?=base_url('img/article_folder/'.$r->article_image);?>" alt="img">
                             <div class="caraousel-caption">
                                 <span><?=ucwords(strtolower($r->maincategory_name));?></span>
-                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                 <h2><?=$r->article_title;?></h2>
                                 </a>
                                 <p class="meta">by <?=$r->user_username.', '.date("l jS F Y", strtotime($r->article_post));?></p>
@@ -158,13 +158,13 @@
                                         <?php foreach($listLatest as $r) { ?>
                                         <article class="zm-post-lay-e zm-single-post clearfix">
                                             <div class="zm-post-thumb f-left">
-                                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                                <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                                     <img src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="img">
                                                 </a>
                                             </div>
                                             <div class="zm-post-dis f-right">
                                                 <div class="zm-post-header">
-                                                    <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                                    <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                                     <h3 class="zm-post-title"><?=word_limiter($r->article_title, 7);?></h3>
                                                     </a>
                                                     <div class="zm-post-meta">
@@ -207,13 +207,13 @@
                                         <?php foreach($listTrend as $r) { ?>
                                         <article class="zm-post-lay-e zm-single-post clearfix">
                                             <div class="zm-post-thumb f-left">
-                                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                                <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                                     <img src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="img">
                                                 </a>
                                             </div>
                                             <div class="zm-post-dis f-right">
                                                 <div class="zm-post-header">
-                                                    <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                                    <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                                     <h3 class="zm-post-title"><?=word_limiter($r->article_title, 7);?></h3>
                                                     </a>
                                                     <div class="zm-post-meta">
@@ -274,7 +274,7 @@
                                         </div>
                                     </div>
                                     <p><?=word_limiter(strip_tags($r->article_desc), 20);?></p>
-                                    <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                    <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                         <p class="btn_feature_stories">read more</p>
                                     </a>
                                 </div>
@@ -299,7 +299,7 @@
                                     <a class="post_category_litle" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
                                     <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt=" imamge responsive">
                                     <div class="articel">
-                                        <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                        <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                             <h5><?=word_limiter($r->article_title, 6);?></h5>
                                         </a>
                                         <div class="zm-post-meta-feature">
@@ -346,7 +346,7 @@
                                     <a class="post_category_bottom" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
                                     <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt=" imamge responsive">
                                     <div class="most_popular-title">
-                                        <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                        <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                         <h3><?=$r->article_title;?></h3>
                                         </a>
                                     </div>

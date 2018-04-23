@@ -81,6 +81,8 @@ $contact = $this->menu_m->select_contact()->row();
                         $listMain = $this->menu_m->select_maincategory()->result();
                         foreach ($listMain as $r) {
                             $maincategory_id = $r->maincategory_id;
+                            $JmlSubMenu      = $this->menu_m->count_sub_category($maincategory_id)->row();
+                            if ($JmlSubMenu->jml > 0) {
                         ?>
                         <li class="dropdown"><a href="<?=site_url('category/' . $r->maincategory_seo);?>"><?=$r->maincategory_name;?></a>
                             <div class="sub-menu-wrap mega-menu2">
@@ -138,7 +140,11 @@ $contact = $this->menu_m->select_contact()->row();
                                 </div>
                             </div>
                         </li>
-                        <?php }?>
+                        <?php } else { ?>
+                        <li class="#"><a href="<?=site_url('category/' . $r->maincategory_seo);?>"><?=$r->maincategory_name;?></a></li>
+                        <?php } 
+                        } 
+                        ?>
                         <li class="#"><a href="<?=site_url('calender');?>">ico calender</a></li>
                     </ul>
                 </nav>

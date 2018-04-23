@@ -82,6 +82,15 @@ class Menu_m extends CI_Model
         return $this->db->get();
     }
 
+    public function count_sub_category($maincategory_id)
+    {
+        $this->db->select('count(category_id) as jml');
+        $this->db->from('v_category');
+        $this->db->where('maincategory_id', $maincategory_id);
+
+        return $this->db->get();
+    }
+
     public function select_category_zero($maincategory_id)
     {
         $this->db->select('*');

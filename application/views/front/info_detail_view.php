@@ -35,34 +35,36 @@
                             </div>
                         </div> -->
                     </div> 
-
+                    <?php
+                    $linkurl     = site_url('info/'.$detail->information_seo);
+                    ?>
                     <div class="jeg_share_top_container">
                         <div class="jeg_share_button clearfix">
                             <div class="jeg_share_stats">
                                 <div class="jeg_share_count">
-                                    <div class="counts">361</div>
+                                    <div class="counts" id="jmlsharefb"></div>
                                     <span class="sharetext">shares</span>
                                 </div>
                                 <div class="jeg_views_count">
-                                    <div class="counts">2.6k</div>
+                                    <div class="counts"><?=$detail->information_read;?></div>
                                     <span class="sharetext">views</span>
                                 </div>
                             </div>
                             <div class="jeg_sharelist">
-                                <a href="#" class="jeg_btn-facebook expanded">
+                                <a href="javascript:void(0);" onclick="popUp=window.open('http://www.facebook.com/sharer.php?u=<?=$linkurl;?>','popupwindow','scrollbars=yes,width=800,height=400');popUp.focus();return false" class="jeg_btn-facebook expanded">
                                     <i class="fa fa-facebook-square"></i>
                                     <span>Share on Facebook</span>
                                 </a>
-                                <a href="#" class="jeg_btn-twitter expanded">
-                                    <i class="fa fa-twitter "></i>
+                                <a href="javascript:void(0);" onclick="popUp=window.open('https://twitter.com/share?url=<?=$linkurl;?>&text=<?=$detail->information_title;?>','popupwindow','scrollbars=yes,width=800,height=400');popUp.focus();return false" class="jeg_btn-twitter expanded">
+                                    <i class="fa fa-twitter"></i>
                                     <span>Share on Twitter</span>
                                 </a>
-                                <a href="#" class="jeg_btn-google-plus">
+                                <a href="javascript:void(0);" onclick="popUp=window.open('https://plus.google.com/share?url=<?=$linkurl;?>','popupwindow','scrollbars=yes,width=800,height=400');popUp.focus();return false" class="jeg_btn-google-plus">
                                     <i class="fa fa-google-plus "></i>
                                 </a>
-                                <a href="#" class="jeg_btn-toggle">
+                                <!-- <a href="#" class="jeg_btn-toggle">
                                     <i class="fa fa-share"></i>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
 
@@ -137,7 +139,7 @@
                         </div>
                         <div class="post-content">
                             <h5 class="post-title-title-small">
-                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a>
+                                <a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a>
                             </h5>
                             <div class="zm-post-meta">
                                 <ul>
@@ -163,7 +165,7 @@
                             <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
                         </div>
                         <div class="articel">
-                            <h4><a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
+                            <h4><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
                             <div class="zm-post-meta">
                                 <ul>
                                     <li class="s-meta">
@@ -180,3 +182,11 @@
         </div> 
     </div>
 </div>
+
+<script>
+$(function(){
+    $.getJSON( "http://graph.facebook.com/<?=$linkurl;?>", function( data ) {
+        $('#jmlsharefb').html(data.share.share_count);
+    });
+});
+</script>

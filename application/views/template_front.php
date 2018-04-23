@@ -22,6 +22,7 @@ $meta = $this->menu_m->select_meta()->row();
         <link rel="stylesheet" href="<?=base_url();?>assets/style.css">
         <link rel="stylesheet" href="<?=base_url();?>assets/css/responsive.css">
         <link rel="stylesheet" href="<?=base_url();?>assets/css/slicknav.min.css">
+        <script src="<?=base_url();?>backend/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
     <!-- <div class="criptobuzz-site-preloader-wrap">

@@ -94,7 +94,7 @@
                         </div>
                         <div class="post-content">
                             <h5 class="post-title-title-small">
-                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a>
+                                <a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a>
                             </h5>
                             <div class="zm-post-meta">
                                 <ul>
@@ -120,7 +120,7 @@
                             <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
                         </div>
                         <div class="articel">
-                            <h4><a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
+                            <h4><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
                             <div class="zm-post-meta">
                                 <ul>
                                     <li class="s-meta">
