@@ -113,6 +113,7 @@ class Article_m extends CI_Model
             'article_desc'     => trim($this->input->post('desc', 'true')),
             'article_feature'  => $this->input->post('lstFeature', 'true'),
             'article_recomend' => $this->input->post('lstRecomend', 'true'),
+            'article_tags'     => $this->input->post('tags', 'true'),
             'article_image'    => $this->upload->file_name,
             'article_post'     => date('Y-m-d H:i:s'),
             'article_update'   => date('Y-m-d H:i:s'),
@@ -143,6 +144,7 @@ class Article_m extends CI_Model
                 'article_desc'     => trim($this->input->post('desc', 'true')),
                 'article_feature'  => $this->input->post('lstFeature', 'true'),
                 'article_recomend' => $this->input->post('lstRecomend', 'true'),
+                'article_tags'     => $this->input->post('tags', 'true'),
                 'article_image'    => $this->upload->file_name,
                 'article_update'   => date('Y-m-d H:i:s'),
             );
@@ -156,6 +158,7 @@ class Article_m extends CI_Model
                 'article_desc'     => trim($this->input->post('desc', 'true')),
                 'article_feature'  => $this->input->post('lstFeature', 'true'),
                 'article_recomend' => $this->input->post('lstRecomend', 'true'),
+                'article_tags'     => $this->input->post('tags', 'true'),
                 'article_update'   => date('Y-m-d H:i:s'),
             );
         }

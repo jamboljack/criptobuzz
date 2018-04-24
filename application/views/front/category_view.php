@@ -4,7 +4,14 @@
             <div class="col-md-8 content">
                 <div class="latest_post clearfix wow fadeInDown">
                     <div class="section-title">
-                        <h5 class=" header-color inline-block uppercase"><?=$detail->maincategory_name;?></h5>
+                        <?php 
+                        if (empty($detail->maincategory_name)) {
+                            $title = $detail->category_name;
+                        } elseif (empty($detail->category_name)) {
+                            $title = $detail->maincategory_name;
+                        }
+                        ?>
+                        <h5 class=" header-color inline-block uppercase"><?=$title;?></h5>
                     </div>
                     <hr>
                     
@@ -12,6 +19,11 @@
                         <div class="row">
                             <?php 
                             foreach ($listArticle as $r) {
+                                $article_id = $r->article_id;
+                                // Comment
+                                $this->db->where('article_id', $article_id);
+                                $this->db->from('cripto_comment');
+                                $komentar = $this->db->count_all_results();
                             ?>
                             <div class="post latest_post">
                                 <div class="col-md-6 col-sm-6">
@@ -25,13 +37,13 @@
                                         <h3><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h3>
                                         <div class="meta_post">
                                             <div class="meta_author">
-                                                <span class="by">by</span> <a href="#"><?=$r->user_username;?></a>
+                                                <span class="by">by</span> <a href="#"><?=ucwords(strtolower($r->user_username));?></a>
                                             </div>
                                             <div class="meta_date">
-                                                <a href=""><i class="fa fa-clock-o"></i> <?=date("l jS F Y", strtotime($r->article_post));?></a>
+                                                <a href="#"><i class="fa fa-clock-o"></i><?=date("l jS F Y", strtotime($r->article_post));?></a>
                                             </div>
                                             <div class="jeg_meta_comment">
-                                                <a href=""><i class="fa fa-comment-o"></i> 0</a>
+                                                <a href="#"><i class="fa fa-comment-o"></i><?=$komentar;?></a>
                                             </div>
                                         </div>
                                         <p><?=word_limiter(strip_tags($r->article_desc), 15);?></p>

@@ -116,6 +116,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-md-2">Tags</label>
+                                    <div class="col-md-10">
+                                        <input id="tags" type="text" name="tags" class="form-control tags medium" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-2 control-label">Image</label>
                                     <div class="col-md-10">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
@@ -270,4 +276,10 @@ function ViewSubCategory() {
     });
     return false;
 }
+
+$(document).ready(function() {
+    $('#tags').tagsInput({
+        width: 'auto'
+    });
+});
 </script>

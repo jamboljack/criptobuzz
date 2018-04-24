@@ -18,6 +18,8 @@ $meta = $this->menu_m->select_meta()->row();
 <link href="<?=base_url();?>backend/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>backend/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>backend/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="<?=base_url();?>backend/assets/global/plugins/jquery-tags-input/jquery.tagsinput.css"/>
+
 <link href="<?=base_url();?>backend/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>backend/assets/global/plugins/select2/select2.css" rel="stylesheet" type="text/css"/>
 <link href="<?=base_url();?>backend/assets/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css"/>
@@ -47,6 +49,7 @@ $meta = $this->menu_m->select_meta()->row();
 <script src="<?=base_url();?>backend/assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
 <script src="<?=base_url();?>backend/assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
 <script src="<?=base_url();?>backend/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="<?=base_url();?>backend/assets/global/plugins/jquery-tags-input/jquery.tagsinput.min.js" type="text/javascript"></script>
 <script src="<?=base_url();?>backend/assets/global/plugins/select2/select2.min.js" type="text/javascript"></script>
 <script src="<?=base_url();?>backend/assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 <script src="<?=base_url();?>backend/assets/global/scripts/metronic.js" type="text/javascript"></script>

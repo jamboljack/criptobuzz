@@ -129,6 +129,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-md-2">Tags</label>
+                                    <div class="col-md-10">
+                                        <input id="tags" type="text" name="tags" class="form-control tags medium" autocomplete="off" value="<?=$detail->article_tags;?>" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-2 control-label">Image</label>
                                     <div class="col-md-10">
                                         <?php
@@ -242,7 +248,7 @@ $(document).ready(function() {
                     if (data.status === 'success') {
                         swal({
                             title:"Success",
-                            text: "Save Data Sukses",
+                            text: "Update Data Sukses",
                             showConfirmButton: false,
                             type: "success",
                             timer: 2000
@@ -262,7 +268,7 @@ $(document).ready(function() {
                 error: function (response) {
                     swal({
                         title:"Error",
-                        text: "Save Data Failed",
+                        text: "Update Data Failed",
                         showConfirmButton: false,
                         type: "error",
                         timer: 2000
@@ -287,4 +293,10 @@ function ViewSubCategory() {
     });
     return false;
 }
+
+$(document).ready(function() {
+    $('#tags').tagsInput({
+        width: 'auto'
+    });
+});
 </script>

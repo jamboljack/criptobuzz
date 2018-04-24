@@ -122,7 +122,7 @@
                                 <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                 <h2><?=$r->article_title;?></h2>
                                 </a>
-                                <p class="meta">by <?=$r->user_username.', '.date("l jS F Y", strtotime($r->article_post));?></p>
+                                <p class="meta">by <?=ucwords(strtolower($r->user_username)).', '.date("l jS F Y", strtotime($r->article_post));?></p>
                             </div>
                         </li>
                         <?php } ?>

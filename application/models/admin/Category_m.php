@@ -15,7 +15,6 @@ class Category_m extends CI_Model
 
     private function _get_datatables_query()
     {
-
         if ($this->input->post('lstMainCategory', 'true')) {
             $this->db->where('maincategory_id', $this->input->post('lstMainCategory', 'true'));
         }

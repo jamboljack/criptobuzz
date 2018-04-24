@@ -15,6 +15,7 @@
                             <option value="">ALL</option>
                             <option value="Admin">Admin</option>
                             <option value="Operator">Operator</option>
+                            <option value="Member">Member</option>
                         </select>
                     </div>
                 </div>

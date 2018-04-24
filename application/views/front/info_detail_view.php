@@ -15,25 +15,7 @@
 
                     <div class="entry-header">
                         <h1 class="jeg_post_title"><?=$detail->information_title;?></h1>
-                        <h2 class="jeg_post_subtitle"><?=$detail->information_subtitle;?></h2> 
-                        <!-- <div class="jeg_meta_container">
-                            <div class="jeg_post_meta jeg_post_meta_1">
-                                <div class="meta_left"> 
-                                    <div class="jeg_meta_text"><span>by</span> <a href="#">admin </a></div> 
-                                    <div class="jeg_meta_date"> <a href="#">February 9th, 2018</a> </div>
-                                    <div class="jeg_meta_category"> 
-                                        <span><span class="meta_text">in</span><a href="#" rel="category tag">Featured</a>,
-                                        <a href="#" rel="category tag">News</a>, 
-                                        <a href="#" rel="category tag">Bitcoins</a> </span>
-                                    </div> 
-                                </div> 
-                                <div class="meta_right"> 
-                                    <div class="jeg_meta_comment">
-                                        <a href="#"><i class="fa fa-comment-o"></i>3</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
+                        <h2 class="jeg_post_subtitle"><?=$detail->information_subtitle;?></h2>
                     </div> 
                     <?php
                     $linkurl     = site_url('info/'.$detail->information_seo);
@@ -62,20 +44,11 @@
                                 <a href="javascript:void(0);" onclick="popUp=window.open('https://plus.google.com/share?url=<?=$linkurl;?>','popupwindow','scrollbars=yes,width=800,height=400');popUp.focus();return false" class="jeg_btn-google-plus">
                                     <i class="fa fa-google-plus "></i>
                                 </a>
-                                <!-- <a href="#" class="jeg_btn-toggle">
-                                    <i class="fa fa-share"></i>
-                                </a> -->
                             </div>
                         </div>
 
                         <div class="conten-inner">
                             <?=$detail->information_desc;?>
-                            <!-- <div class="jeg_post_tags">
-                                <span>Tags:</span>
-                                <a href="#" rel="tag">Bitcoins</a>
-                                <a href="#" rel="tag">Forbes</a>
-                                <a href="#" rel="tag">Crypton</a>
-                            </div> -->
                         </div>
                     </div>
                 </div>  

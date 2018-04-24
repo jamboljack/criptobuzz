@@ -17,7 +17,11 @@ class Article extends CI_Controller
 
     public function detail($article_seo)
     {
-        
+        $data['listRecomend'] = $this->article_m->select_recomended($article_seo)->result();
+        $data['listMost']     = $this->article_m->select_most_popular($article_seo)->result();
+        $data['detail']       = $this->article_m->select_by_id($article_seo)->row();
+        $data['editor']       = $this->article_m->select_editor_by_id($article_seo)->row();
+        $this->template_front->display('front/article_view', $data);
     }
 }
 /* Location: ./application/controller/Article.php */

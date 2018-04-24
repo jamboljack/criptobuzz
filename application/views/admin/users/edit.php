@@ -96,6 +96,7 @@
                                                         <option value="">- Choose -</option>
                                                         <option value="Admin" <?php if ($detail->user_level == 'Admin') {echo "selected";}?>>Admin</option>
                                                         <option value="Operator" <?php if ($detail->user_level == 'Operator') {echo "selected";}?>>Operator</option>
+                                                        <option value="Member" <?php if ($detail->user_level == 'Member') {echo "selected";}?>>Member</option>
                                                     </select>
                                                 </div>
                                             </div>
