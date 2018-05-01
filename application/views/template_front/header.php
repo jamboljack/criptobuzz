@@ -25,8 +25,13 @@ $contact = $this->menu_m->select_contact()->row();
                     ?>
                     <a href="<?=$r->social_url;?>" target="_blank"><span class="fa fa-<?=$r->social_class;?>"></span></a>
                     <?php }?>
-                    <a href="#" data-toggle="modal" data-target="#login-modal"><span><i class="fa fa-lock"></i></span>login</a>
+                    <?php if (!$this->session->userdata('logged_in_member_cripto')) { ?>
+                    <a href="#" data-toggle="modal" data-target="#login-modal"><span><i class="fa fa-lock"></i></span>Sign In</a>
                     <a href="#" data-toggle="modal" data-target="#register-modal"><span><i class="fa fa-user"></i></span>Sign Up</a>
+                    <?php } else { ?>
+                    Welcome, <?=$this->session->userdata('username_member');?>&nbsp
+                    <a href="<?=site_url('login/logout');?>"><i class="fa fa-sign-out"></i>Sign Out</a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

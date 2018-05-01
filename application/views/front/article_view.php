@@ -138,25 +138,29 @@
                     </div>
                     <hr>
                     <div class="row">
-
+                        <?php 
+                        foreach($listOther as $r) {
+                        ?>
                         <div class="col-md-4 ">
                             <div class="post_blog_single wow FadeinLeft">
-                                <a class="post_category_litle" href="#">markets</a>
-                                <img class="img-responsive" src="assets/images/feature/featuer4.jpg" alt="Image Responsive">
+                                <?php if (!empty($r->category_name)) { ?>
+                                <a class="post_category" href="<?=site_url('category/'.$r->maincategory_seo.'/'.$r->category_seo);?>"><?=ucwords(strtolower($r->category_name));?></a>
+                                <?php } ?>
+                                <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="Image Responsive">
                                 <div class="articel">
-                                    <h5>What is PowerLedger (POWR?| Beginner's Guide</h5>
+                                    <h5><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=word_limiter($r->article_title, 6);?></a></h5>
                                     <div class="zm-post-meta">
                                         <ul>
                                             <li class="s-meta">
                                                 <i class="fa fa-clock-o"></i>
-                                                <a href="#" class="zm-date">April 18, 2016</a>
+                                                <a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->article_post));?></a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -167,29 +171,36 @@
                         </h3>
                         <div class="jeg_commentlist_container">
                             <ol class="commentlist">
-                                
+                                <?php foreach($listComment as $r) { ?>
                                 <li class="comment even thread-even depth-1 parent" id="comment-22">
                                     <div id="div-comment-22" class="comment-body">
                                         <div class="comment-author vcard">
-                                            <img alt="" src="assets/images/blogpost/autor3.png" class="avatar avatar-55 photo" height="55" width="55" data-pin-no-hover="true">
+                                            <img alt="" src="<?=base_url('img/icon/'.$r->user_avatar);?>" class="avatar avatar-55 photo" height="55" width="55" data-pin-no-hover="true">
                                             <cite class="fn">
-                                                <a href="#" rel="external nofollow" class="url">Marie Daddario</a>
+                                                <a href="#" rel="external nofollow" class="url"><?=$r->user_name;?></a>
                                             </cite>
-                                            <span class="says">says:</span>
+                                            <span class="says">says :</span>
                                         </div>
                                         <div class="comment-meta commentmetadata">
                                             <i class="fa fa-clock-o"></i>
-                                            <a href="#"> 1 months ago </a>
+                                            <a href="#"><?=date("l jS F Y", strtotime($r->comment_post));?></a>
                                         </div>
                                         <div class="comment-content">
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
+                                            <p><?=$r->comment_desc;?></p>
                                         </div>
-                                        <div class="reply">
+                                        <!-- <div class="reply">
                                             <a rel="nofollow" class="comment-reply-link" href="#" onclick="return addComment.moveForm( &quot;div-comment-22&quot;, &quot;22&quot;, &quot;respond&quot;, &quot;1439&quot; )" aria-label="Reply to Marie Daddario">Reply</a>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    
+                                    <?php 
+                                    $comment_id = $r->comment_id;
+                                    $listReply = $this->article_m->select_reply($comment_id)->result();
+                                    if (count($listReply) > 0) {
+                                    ?>
                                     <ul class="children">
+                                        <?php 
+                                        foreach($listReply as $p) {
+                                        ?>
                                         <li class="comment odd alt depth-2 parent" id="comment-64">
                                             <div id="div-comment-64" class="comment-body">
                                                 <div class="comment-author vcard">
@@ -211,47 +222,44 @@
                                                 </div>
                                             </div>
                                         </li>
+                                        <?php } ?>
                                     </ul>
-
+                                    <?php } ?>
                                 </li>
-
+                                <?php } ?>
                             </ol>
                         </div>
                     </div>
-
                     <div id="respond" class="comment-respond">
-                        <h3 id="reply-title" class="comment-reply-title">Leave a Reply</h3>
-                        <form action="#" method="post" id="commentform" class="comment-form">
+                        <h3 id="reply-title" class="comment-reply-title">Leave a Comment</h3>
+                        <?php if ($this->session->userdata('logged_in_member_cripto')) { ?>
+                        <form method="post" id="commentForm" class="comment-form">
                             <p class="comment-notes">
                                 <span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span>
                             </p>
+                            <div class="form-message alert alert-danger" id="msgCommentFailed"></div>
+                            <div class="form-message alert alert-success" id="msgCommentSuccess"></div>
                             <p class="comment-form-comment">
                                 <label for="comment">Comment</label>
-                                <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea>
-                            </p>
-                            <p class="comment-form-author">
-                                <label for="author">Name <span class="required">*</span></label>
-                                <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required">
+                                <textarea id="comment" name="comment" cols="45" rows="8"></textarea>
                             </p>
                             <p class="comment-form-email">
-                                <label for="email">Email <span class="required">*</span></label>
-                                <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required">
+                                <label for="author">Name</label>
+                                <input id="namecomment" name="namecomment" type="text" value="<?=$this->session->userdata('username_member');?>" autocomplete="off" readonly>
                             </p>
-                            <p class="comment-form-url">
-                                <label for="url">Website</label>
-                                <input id="url" name="url" type="text" value="" size="30" maxlength="200">
+                            <p class="comment-form-email">
+                                <label for="email">Email</label>
+                                <input id="emailcomment" name="emailcomment" type="text" value="<?=$this->session->userdata('email_member');?>" autocomplete="off" readonly>
                             </p>
+                            <?=$this->recaptcha->render();?>
+                            <br><br><br><br><br><br>
                             <p class="form-submit_blog">
                                 <input name="submit_blog" type="submit" id="submit_blog" class="submit_blog" value="Post Comment">
-                                <input type="hidden" name="comment_post_ID" value="1439" id="comment_post_ID">
-                                <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                             </p>
-                            <p style="display: none;">
-                                <input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="8d0561d384">
-                            </p>
-                            <p style="display: none;"></p>
-                            <input type="hidden" id="ak_js" name="ak_js" value="1521820342467">
                         </form>
+                        <?php } else { ?>
+                        <div>Please <a href="#" data-toggle="modal" data-target="#login-modal">Sign In</a> or <a href="#" data-toggle="modal" data-target="#register-modal">Sign Up</a></div>
+                        <?php } ?>
                     </div>
                 </div>
             </div> 
@@ -353,10 +361,66 @@
     </div>
 </div>
 
+<style type="text/css">
+    .error {
+        color: #FF0000;
+    }
+</style>
+
+<script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script>
 $(function(){
     $.getJSON( "http://graph.facebook.com/<?=$linkurl;?>", function( data ) {
         $('#jmlsharefb').html(data.share.share_count);
+    });
+});
+
+jQuery(document).ready(function($) {
+    $("#msgCommentSuccess").hide();
+    $("#msgCommentFailed").hide();
+
+    $("#commentForm").validate({
+        rules: { 
+            comment: { required: true, minlength: 5 },
+            namecomment: { required: true, minlength: 5 },
+            emailcomment: { required: true, minlength: 10, email: true }
+        },
+        messages: {
+            comment: { 
+                required:'*) Comment required', minlength:'Min. 5 Character'
+            },
+            namecomment: {
+                required:'*) Name required', minlength:'Min. 5 Character'
+            },
+            emailcomment: { 
+                required:'*) Email required', minlength:'Min. 10 Character', email:'Email Not Valid'
+            }
+        },
+        submitHandler: function(form) {
+            var article_seo = <?=$detail->article_seo;?>;
+            dataString = $("#commentForm").serialize();
+            $.ajax({
+                url: "<?=site_url('article/savecomment/');?>"+article_seo,
+                type: "POST",
+                dataType: 'json',
+                data: dataString,
+                success: function(data) {
+                    if (data.status === 'success') {
+                        $("#msgCommentSuccess").show();
+                        $("#msgCommentFailed").hide();
+                        $("#msgCommentSuccess").text(data.message);
+                        location.reload();
+                    } else {
+                        $("#msgCommentFailed").show();
+                        $("#msgCommentSuccess").hide();
+                        $("#msgCommentFailed").text(data.message);
+                    }
+                },
+                error: function() {
+                    alert("Error, Connected to Server Failed.");
+                }
+            });
+        }
     });
 });
 </script>

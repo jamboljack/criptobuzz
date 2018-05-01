@@ -27,6 +27,7 @@ class Contact_m extends CI_Model
                 'contact_address' => strtoupper(stripHTMLtags($this->input->post('address', 'true'))),
                 'contact_phone'   => trim(stripHTMLtags($this->input->post('phone', 'true'))),
                 'contact_email'   => trim(stripHTMLtags($this->input->post('email', 'true'))),
+                'contact_web'     => trim(stripHTMLtags($this->input->post('web', 'true'))),
                 'contact_image'   => $this->upload->file_name,
                 'contact_update'  => date('Y-m-d H:i:s'),
             );
@@ -36,6 +37,7 @@ class Contact_m extends CI_Model
                 'contact_address' => strtoupper(stripHTMLtags($this->input->post('address', 'true'))),
                 'contact_phone'   => trim(stripHTMLtags($this->input->post('phone', 'true'))),
                 'contact_email'   => trim(stripHTMLtags($this->input->post('email', 'true'))),
+                'contact_web'     => trim(stripHTMLtags($this->input->post('web', 'true'))),
                 'contact_update'  => date('Y-m-d H:i:s'),
             );
         }

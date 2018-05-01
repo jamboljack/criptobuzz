@@ -49,8 +49,6 @@
     }
 </style>
 
-<script src="<?=base_url();?>backend/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
     $("#contact_form").validate({

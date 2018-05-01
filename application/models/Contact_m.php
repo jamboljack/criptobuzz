@@ -29,7 +29,7 @@ class Contact_m extends CI_Model
             'message_post'    => date('Y-m-d H:i:s'),
         );
 
-        $this->db->insert('alifa_message', $data);
+        $this->db->insert('cripto_message', $data);
     }
 }
 /* Location: ./application/model/Contact_m.php */

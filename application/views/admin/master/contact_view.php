@@ -81,6 +81,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label">Website</label>
+                                    <div class="col-md-5">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <input type="text" class="form-control" name="web" placeholder="Input Website" value="<?=$detail->contact_web;?>" autocomplete="off" required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Foto</label>
                                     <div class="col-md-5">
                                         <?php if (empty($detail->contact_image)) { ?>
@@ -152,13 +161,15 @@ $(document).ready(function() {
             name: { required: true },
             address: { required: true },
             phone: { required: true },
-            email: { required: true, email: true }
+            email: { required: true, email: true },
+            web: { required: true, url: true }
         },
         messages: {
             name: { required :'Name required' },
             address: { required :'Address required' },
             phone: { required :'Phone required' },
-            email: { required :'Email required', email: 'Email not Valid' }
+            email: { required :'Email required', email: 'Email not Valid' },
+            web: { required :'Website required', url: 'URL not Valid' }
         },
         invalidHandler: function (event, validator) {
             success.hide();

@@ -15,6 +15,7 @@ class Login_admin_model extends CI_Model
         $this->db->from('cripto_users');
         $this->db->where('user_username', $username);
         $this->db->where('user_password', $password);
+        $this->db->where('user_level !=', 'Member');
         $this->db->where('user_status', 'Aktif');
 
         return $this->db->get();
@@ -25,6 +26,7 @@ class Login_admin_model extends CI_Model
         $this->db->select('*');
         $this->db->from('cripto_users');
         $this->db->where('user_username', $username);
+        $this->db->where('user_level !=', 'Member');
         $this->db->where('user_status', 'Aktif');
 
         return $this->db->get();

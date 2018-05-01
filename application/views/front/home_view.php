@@ -257,11 +257,11 @@
                         <div class="row">
                             <div class="col-md-6 ">
                                 <a class="post_category" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
-                                <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="imamge responsive">
+                                <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="Image Responsive">
                             </div>
                             <div class="col-md-6">
                                 <div class="articel">
-                                    <h3><?=$r->article_title;?></h3>
+                                    <h3><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h3>
                                     <div class="meta_post">
                                         <div class="meta_author">
                                             <span class="by">by</span> <a href="#"><?=$r->user_username;?></a>
@@ -299,9 +299,7 @@
                                     <a class="post_category_litle" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
                                     <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt=" imamge responsive">
                                     <div class="articel">
-                                        <a href="<?=site_url('article/post/'.$r->article_seo);?>">
-                                            <h5><?=word_limiter($r->article_title, 6);?></h5>
-                                        </a>
+                                        <h5><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=word_limiter($r->article_title, 6);?></a></h5>
                                         <div class="zm-post-meta-feature">
                                             <ul>
                                                 <li class="s-meta">
@@ -344,7 +342,7 @@
                             <div class="col-md-6 col-sm-6">
                                 <div class="articel_reserch">
                                     <a class="post_category_bottom" href="<?=site_url('category/'.$r->maincategory_seo);?>"><?=ucwords(strtolower($r->maincategory_name));?></a>
-                                    <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt=" imamge responsive">
+                                    <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="imamge responsive">
                                     <div class="most_popular-title">
                                         <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                         <h3><?=$r->article_title;?></h3>
@@ -362,7 +360,7 @@
                                         </div>
                                     </div>
                                     <p><?=word_limiter(strip_tags($r->article_desc), 20);?></p>
-                                    <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                    <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                         <p class="btn_feature_stories">read more</p>
                                     </a>
                                 </div>
@@ -384,7 +382,7 @@
                                                 </div>
                                                 <div class="post-content">
                                                     <h5 class="post-title title-small">
-                                                        <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=word_limiter($r->article_title, 6);?></a>
+                                                        <a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=word_limiter($r->article_title, 6);?></a>
                                                     </h5>
                                                     <div class="zm-post-meta">
                                                         <ul>
@@ -429,7 +427,7 @@
                                 </div>
                                 <div class="col-md-6 col-sm-6">
                                     <div class="articel">
-                                        <h3><a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a></h3>
+                                        <h3><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h3>
                                         <div class="meta_post">
                                             <div class="meta_author">
                                                 <span class="by">by</span> <a href="#"><?=$r->user_username;?></a>
@@ -442,7 +440,7 @@
                                             </div>
                                         </div>
                                         <p><?=word_limiter(strip_tags($r->article_desc), 15);?></p>
-                                        <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>">
+                                        <a href="<?=site_url('article/post/'.$r->article_seo);?>">
                                             <p class="btn_feature_stories">read more</p>
                                         </a>
                                     </div>
@@ -541,7 +539,7 @@
                                         </div>
                                         <div class="post-content">
                                             <h5 class="post-title-title-small">
-                                                <a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a>
+                                                <a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a>
                                             </h5>
                                             <div class="zm-post-meta">
                                                 <ul>
@@ -567,7 +565,7 @@
                                             <img class="img-responsive" src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="">
                                         </div>
                                         <div class="articel">
-                                            <h4><a href="<?=site_url('article/post/id-'.$r->article_id.'/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
+                                            <h4><a href="<?=site_url('article/post/'.$r->article_seo);?>"><?=$r->article_title;?></a></h4>
                                             <div class="zm-post-meta">
                                                 <ul>
                                                     <li class="s-meta">

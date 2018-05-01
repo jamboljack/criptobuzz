@@ -25,18 +25,18 @@ $meta = $this->menu_m->select_meta()->row();
         <script src="<?=base_url();?>backend/assets/global/plugins/jquery.min.js" type="text/javascript"></script>
     </head>
     <body>
-    <!-- <div class="criptobuzz-site-preloader-wrap">
+    <div class="criptobuzz-site-preloader-wrap">
         <div class="spinner-2"></div>
-    </div> -->
+    </div>
     <?=$_header;?>
     <?=$content;?>
     <?=$_footer;?>
     <div class="modal fade login-modal" id="login-modal" role="dialog">
         <div class="jeg_popupform">
-            <form action="#" method="post" accept-charset="utf-8">
-                <h3>Welcome Back!</h3>
+            <form id="formLogin" method="post">
+                <h3>Welcome Back !</h3>
                 <button class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <div class="social-login-wrapper login normal">
+                <!-- <div class="social-login-wrapper login normal">
                     <div class="social-login-item">
                         <a href="#" class="btn btn-facebook">
                             <i class="fa fa-facebook"></i>
@@ -58,14 +58,14 @@ $meta = $this->menu_m->select_meta()->row();
                     <div class="social-login-line">
                         <span>OR</span>
                     </div>
-                </div>
+                </div> -->
                 <p>Login to your account below</p>
-                <div class="form-message"></div>
+                <div class="form-message alert alert-danger" id="msgBoxLogin"></div>
                 <p class="input_field">
-                    <input type="text" name="username" placeholder="Username" value="">
+                    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
                 </p>
                 <p class="input_field">
-                    <input type="password" name="password" placeholder="Password" value="">
+                    <input type="password" name="password" placeholder="Password" autocomplete="off" required>
                 </p>
                 <p class="submit">
                     <input type="hidden" name="action" value="login_handler">
@@ -73,8 +73,10 @@ $meta = $this->menu_m->select_meta()->row();
                     <input type="submit" name="jeg_login_button" class="button_modal" value="Log In" data-process="Processing . . ." data-string="Log In">
                 </p>
                 <div class="bottom_links clearfix">
-                    <a href="#jeg_forgotform" class="jeg_popuplink forgot">Forgotten Password?</a>
-                    <a href="#jeg_registerform" class="jeg_popuplink-signup">
+                    <a href="javascript:void(0)" onclick="showForgot()" class="jeg_popuplink forgot">
+                        Forgotten Password ?
+                    </a>
+                    <a href="javascript:void(0)" onclick="showSignUp()" class="jeg_popuplink_register">
                         <i class="fa fa-user"></i> Sign Up
                     </a>
                 </div>
@@ -84,10 +86,10 @@ $meta = $this->menu_m->select_meta()->row();
 
     <div class="modal fade register-modal" id="register-modal" role="dialog">
         <div class="jeg_popupform">
-            <form action="#" method="post" accept-charset="utf-8">
+            <form method="post" id="formSignUp">
                 <h3>Create New Account!</h3>
                 <button class="close_register" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <div class="social-login-wrapper register normal">
+                <!-- <div class="social-login-wrapper register normal">
                     <div class="social-login-item">
                         <a href="#" class="btn btn-facebook">
                             <i class="fa fa-facebook"></i>
@@ -109,24 +111,28 @@ $meta = $this->menu_m->select_meta()->row();
                     <div class="social-login-line">
                         <span>OR</span>
                     </div>
-                </div>
+                </div> -->
                 <p>Fill the forms bellow to register</p>
-                <div class="form-message"><!-- <p class="alert alert-error">Invalid username</p> -->
-                </div>
+                <div class="form-message alert alert-warning" id="msgBoxWarning"></div>
+                <div class="form-message alert alert-success" id="msgBoxSuccess"></div>
                 <p class="input_field">
-                    <input type="text" name="email" placeholder="Your email" value="">
+                    <input type="text" name="email" id="email" placeholder="Your email" autocomplete="off" required>
                 </p>
                 <p class="input_field">
-                    <input type="text" name="username" placeholder="Username" value="">
+                    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
+                </p>
+                <p class="input_field">
+                    <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required>
+                </p>
+                <p class="input_field">
+                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" autocomplete="off" required>
                 </p>
                 <p class="submit">
-                    <input type="hidden" name="action" value="register_handler">
-                    <input type="hidden" name="jnews_nonce" value="1ee2bdc364">
                     <input type="submit" name="jeg_login_button" class="button" value="Sign Up" data-process="Processing . . ." data-string="Sign Up">
                 </p>
                 <div class="bottom_links clearfix">
                     <span>All fields are required.</span>
-                    <a href="#jeg_loginform" class="jeg_popuplink_register">
+                    <a href="javascript:void(0)" onclick="showLogin()" class="jeg_popuplink_register">
                         <i class="fa fa-lock"></i> Log In
                     </a>
                 </div>
@@ -134,20 +140,23 @@ $meta = $this->menu_m->select_meta()->row();
         </div>
     </div>
 
-    <div id="jeg_forgotform" class="jeg_popup mfp-with-anim mfp-hide">
+    <div class="modal fade register-modal" id="forgot-modal" role="dialog">
         <div class="jeg_popupform">
-            <form action="#" method="post" accept-charset="utf-8">
+            <form id="formForgot" method="post">
                 <h3>Retrieve your password</h3>
-                <p>Please enter your username or email address to reset your password.</p>
+                <button class="close_register" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <p>Please enter your email address to reset your password.</p>
                 <div class="form-message"></div>
-                <p class="input_field"> <input type="text" name="user_login" placeholder="Your email or username" value=""> </p>
+                <p class="input_field">
+                    <input type="text" name="forgot" placeholder="Your Email" autocomplete="off" required>
+                </p>
                 <p class="submit">
-                    <input type="hidden" name="action" value="forget_password_handler">
-                    <input type="hidden" name="jnews_nonce" value="cea4ed573a">
-                    <input type="submit_signup" name="jeg_login_button" class="button" value="Reset Password" data-process="Processing . . ." data-string="Reset Password">
+                    <input type="submit" name="jeg_login_button" class="button" value="Reset Password" data-process="Processing . . ." data-string="Reset Password">
                 </p>
                 <div class="bottom_links clearfix">
-                    <a href="#jeg_loginform" class="jeg_popuplink"><i class="fa fa-lock"></i> Log In</a>
+                    <a href="javascript:void(0)" onclick="showLogin()" class="jeg_popuplink_register">
+                        <i class="fa fa-lock"></i> Log In
+                    </a>
                 </div>
             </form>
         </div>
@@ -161,5 +170,182 @@ $meta = $this->menu_m->select_meta()->row();
     <script src="<?=base_url();?>assets/js/jquery.slicknav.min.js"></script>
     <script src="<?=base_url();?>assets/js/plugins.js"></script>
     <script src="<?=base_url();?>assets/js/active.js"></script>
+    <script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+    function showLogin() {
+        $('#formLogin')[0].reset();
+        $('#formSignUp')[0].reset();
+        $('#formForgot')[0].reset();
+        $('#register-modal').modal('hide');
+        $('#forgot-modal').modal('hide');
+        $('#login-modal').modal('show');
+    }
+
+    function showSignUp() {
+        $('#formLogin')[0].reset();
+        $('#formSignUp')[0].reset();
+        $('#formForgot')[0].reset();
+        $('#login-modal').modal('hide');
+        $('#forgot-modal').modal('hide')
+        $('#register-modal').modal('show');;
+    }
+
+    function showForgot() {
+        $('#formLogin')[0].reset();
+        $('#formSignUp')[0].reset();
+        $('#formForgot')[0].reset();
+        $('#login-modal').modal('hide');
+        $('#register-modal').modal('hide');;
+        $('#forgot-modal').modal('show')
+    }
+    </script>
+
+    <style type="text/css">
+        .error {
+            color: #FF0000;
+        }
+    </style>
+    
+    <script type="text/javascript">
+    $.validator.addMethod("alphanumeric", function(value, element) {
+        return this.optional(element) || /^\w+$/i.test(value);
+    }, "Only Alphanumeric");
+
+    jQuery(document).ready(function($) {
+        $("#msgBoxWarning").hide();
+        $("#msgBoxSuccess").hide();
+        $("#formSignUp").validate({
+            rules: { 
+                email: { 
+                    required: true, minlength: 5, email: true,
+                    remote: {
+                        url: "<?=site_url('register/register_email_exists');?>",
+                        type: "post",
+                        data: {
+                            email: function() { 
+                                return $("#email").val(); 
+                            }
+                        }
+                    }
+                },
+                username: { 
+                    required: true, minlength: 5, alphanumeric: true,
+                    remote: {
+                        url: "<?=site_url('register/register_user_exists');?>",
+                        type: "post",
+                        data: {
+                            username: function() { 
+                                return $("#username").val(); 
+                            }
+                        }
+                    }
+                },
+                password: { 
+                    required: true, minlength: 5
+                },
+                confirmpassword: { 
+                    required: true, minlength: 5, equalTo: "#password"
+                }
+            },
+            messages: {
+                email: { 
+                    required:'*) Email required', minlength:'Min. 5 Character', email:'Email Not Valid',
+                    remote:'Email Exist, Please Change Email'
+                },
+                username: {
+                    required:'*) Username required', minlength:'Min. 5 Character', 
+                    remote:'Username Exist, Please Change Username'
+                },
+                password: { 
+                    required:'*) Password required', minlength:'Min. 5 Character'
+                },
+                confirmpassword: { 
+                    required:'*) Confirm Password required', minlength:'Min. 5 Character', 
+                    equalTo:'Confirm Password must be Equal to Password'
+                }
+            },
+            submitHandler: function(form) {
+                dataString = $("#formSignUp").serialize();
+                $.ajax({
+                    url: "<?=site_url('register/savedata');?>",
+                    type: "POST",
+                    dataType: 'json',
+                    data: dataString,
+                    success: function(data) {
+                        if (data.status === 'success') {
+                            $("#msgBoxSuccess").show();
+                            $("#msgBoxWarning").hide();
+                            $("#msgBoxSuccess").text(data.message);
+                            resetformSignUp();
+                        } else {
+                            $("#msgBoxSuccess").hide();
+                            $("#msgBoxWarning").show();
+                            $("#msgBoxWarning").text(data.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Error, Process Failed.");
+                    }
+                });
+            }
+        });
+    });
+
+    function resetformSignUp() {
+        $("#email").val('');
+        $("#username").val('');
+        $("#password").val('');
+        $("#confirmpassword").val('');
+    }
+
+    jQuery(document).ready(function($) {
+        $("#msgBoxLogin").hide();
+        $("#formLogin").validate({
+            rules: { 
+                username: { 
+                    required: true, minlength: 5, alphanumeric: true,
+                    remote: {
+                        url: "<?=site_url('login/check_user_exists');?>",
+                        type: "post",
+                        data: {
+                            username: function() { 
+                                return $("#username").val(); 
+                            }
+                        }
+                    } },
+                password: { required: true, minlength: 5 }
+            },
+            messages: {
+                username: {
+                    required:'*) Username required', minlength:'Min. 5 Character', remote:'Username Not Found, Cannot Login'
+                },
+                password: { 
+                    required:'*) Password required', minlength:'Min. 5 Character'
+                },
+            },
+            submitHandler: function(form) {
+                dataString = $("#formLogin").serialize();
+                $.ajax({
+                    url: "<?=site_url('login/validasi');?>",
+                    type: "POST",
+                    dataType: 'json',
+                    data: dataString,
+                    success: function(data) {
+                        if (data.status === 'success') {
+                            location.reload();
+                        } else {
+                            $("#msgBoxLogin").show();
+                            $("#msgBoxLogin").text(data.message);
+                        }
+                    },
+                    error: function() {
+                        alert("Error, Process Login Failed.");
+                    }
+                });
+            }
+        });
+    });
+    </script>
     </body>
 </html>

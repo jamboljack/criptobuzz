@@ -18,7 +18,6 @@ class Category extends CI_Controller
     {
         if ($this->session->userdata('logged_in_cripto')) {
             $data['listMain']     = $this->db->get('cripto_maincategory')->result();
-            // $data['listCategory'] = $this->db->get('cripto_category')->result();
             $this->template->display('admin/master/category_view', $data);
         } else {
             $this->session->sess_destroy();
