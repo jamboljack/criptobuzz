@@ -18,9 +18,9 @@ class Register_m extends CI_Model
         // if ($rsp['success']) {
         $kode_aktivasi = md5(uniqid(rand()));
         $data          = array(
-            'user_username'    => trim(stripHTMLtags($this->input->post('username', 'true'))),
-            'user_password'    => sha1(trim(stripHTMLtags($this->input->post('password', 'true')))),
-            'user_email'       => trim(stripHTMLtags($this->input->post('email', 'true'))),
+            'user_username'    => trim(stripHTMLtags($this->input->post('username_sign', 'true'))),
+            'user_password'    => sha1(trim(stripHTMLtags($this->input->post('password_sign', 'true')))),
+            'user_email'       => trim(stripHTMLtags($this->input->post('email_sign', 'true'))),
             'user_level'       => 'Member',
             'user_status'      => 'Tidak Aktif',
             'user_key_reg'     => $kode_aktivasi,
@@ -30,9 +30,9 @@ class Register_m extends CI_Model
 
         $this->db->insert('cripto_users', $data);
 
-        $username     = trim(stripHTMLtags($this->input->post('username', 'true')));
-        $password     = trim(stripHTMLtags($this->input->post('password', 'true')));
-        $email        = trim(stripHTMLtags($this->input->post('email', 'true')));
+        $username     = trim(stripHTMLtags($this->input->post('username_sign', 'true')));
+        $password     = trim(stripHTMLtags($this->input->post('password_sign', 'true')));
+        $email        = trim(stripHTMLtags($this->input->post('email_sign', 'true')));
         $contact      = $this->db->get_where('cripto_contact', array('contact_id' => 1))->row();
         $website      = trim($contact->contact_web);
         $sender_email = 'no-reply@sewamobilsentani.com';
@@ -40,9 +40,9 @@ class Register_m extends CI_Model
         $subject      = "Account Activation";
         $message      = "<p>Welcome, " . $username . "
                         <br>
-                        Please Click Link for Activate your Account : <a href=" . $website . '/activate/code/' . $kode_aktivasi . ">Link</a>
+                        Please Click Link for Activate your Account : <a href=" . $website . '/register/activate/' . $kode_aktivasi . ">Link</a>
                         <br>
-                        or Copy Paste this Link ".$website."/activate/code/" . $kode_aktivasi .
+                        or Copy Paste this Link " . $website . "/register/activate/" . $kode_aktivasi .
             "</p>";
 
         $this->load->library('email');
@@ -61,6 +61,17 @@ class Register_m extends CI_Model
         // }
 
         echo json_encode($response);
+    }
+
+    public function activate_data($key_reg)
+    {
+        $data    = array(
+            'user_status'      => 'Aktif',
+            'user_date_update' => date('Y-m-d H:i:s'),
+        );
+
+        $this->db->where('user_key_reg', $key_reg);
+        $this->db->update('cripto_users', $data);
     }
 }
 /* Location: ./application/model/Register_m.php */

@@ -62,15 +62,13 @@ $meta = $this->menu_m->select_meta()->row();
                 <p>Login to your account below</p>
                 <div class="form-message alert alert-danger" id="msgBoxLogin"></div>
                 <p class="input_field">
-                    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
+                    <input type="text" name="username_login" id="username_login" placeholder="Username" autocomplete="off">
                 </p>
                 <p class="input_field">
-                    <input type="password" name="password" placeholder="Password" autocomplete="off" required>
+                    <input type="password" name="password_login" id="password_login" placeholder="Password" autocomplete="off">
                 </p>
                 <p class="submit">
-                    <input type="hidden" name="action" value="login_handler">
-                    <input type="hidden" name="jnews_nonce" value="cea4ed573a">
-                    <input type="submit" name="jeg_login_button" class="button_modal" value="Log In" data-process="Processing . . ." data-string="Log In">
+                    <input type="submit" name="jeg_login_button" class="button_modal" value="Log In">
                 </p>
                 <div class="bottom_links clearfix">
                     <a href="javascript:void(0)" onclick="showForgot()" class="jeg_popuplink forgot">
@@ -116,16 +114,16 @@ $meta = $this->menu_m->select_meta()->row();
                 <div class="form-message alert alert-warning" id="msgBoxWarning"></div>
                 <div class="form-message alert alert-success" id="msgBoxSuccess"></div>
                 <p class="input_field">
-                    <input type="text" name="email" id="email" placeholder="Your email" autocomplete="off" required>
+                    <input type="text" name="email_sign" id="email_sign" placeholder="Your email" autocomplete="off">
                 </p>
                 <p class="input_field">
-                    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
+                    <input type="text" name="username_sign" id="username_sign" placeholder="Username" autocomplete="off">
                 </p>
                 <p class="input_field">
-                    <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required>
+                    <input type="password" name="password_sign" id="password_sign" placeholder="Password" autocomplete="off">
                 </p>
                 <p class="input_field">
-                    <input type="password" name="confirmpassword" id="confirmpassword" placeholder="Confirm Password" autocomplete="off" required>
+                    <input type="password" name="confirmpassword_sign" id="confirmpassword_sign" placeholder="Confirm Password" autocomplete="off">
                 </p>
                 <p class="submit">
                     <input type="submit" name="jeg_login_button" class="button" value="Sign Up" data-process="Processing . . ." data-string="Sign Up">
@@ -217,7 +215,7 @@ $meta = $this->menu_m->select_meta()->row();
         $("#msgBoxSuccess").hide();
         $("#formSignUp").validate({
             rules: { 
-                email: { 
+                email_sign: { 
                     required: true, minlength: 5, email: true,
                     remote: {
                         url: "<?=site_url('register/register_email_exists');?>",
@@ -229,7 +227,7 @@ $meta = $this->menu_m->select_meta()->row();
                         }
                     }
                 },
-                username: { 
+                username_sign: { 
                     required: true, minlength: 5, alphanumeric: true,
                     remote: {
                         url: "<?=site_url('register/register_user_exists');?>",
@@ -241,26 +239,26 @@ $meta = $this->menu_m->select_meta()->row();
                         }
                     }
                 },
-                password: { 
+                password_sign: { 
                     required: true, minlength: 5
                 },
-                confirmpassword: { 
-                    required: true, minlength: 5, equalTo: "#password"
+                confirmpassword_sign: { 
+                    required: true, minlength: 5, equalTo: "#password_sign"
                 }
             },
             messages: {
-                email: { 
+                email_sign: { 
                     required:'*) Email required', minlength:'Min. 5 Character', email:'Email Not Valid',
                     remote:'Email Exist, Please Change Email'
                 },
-                username: {
+                username_sign: {
                     required:'*) Username required', minlength:'Min. 5 Character', 
                     remote:'Username Exist, Please Change Username'
                 },
-                password: { 
+                password_sign: { 
                     required:'*) Password required', minlength:'Min. 5 Character'
                 },
-                confirmpassword: { 
+                confirmpassword_sign: { 
                     required:'*) Confirm Password required', minlength:'Min. 5 Character', 
                     equalTo:'Confirm Password must be Equal to Password'
                 }
@@ -303,7 +301,7 @@ $meta = $this->menu_m->select_meta()->row();
         $("#msgBoxLogin").hide();
         $("#formLogin").validate({
             rules: { 
-                username: { 
+                username_login: { 
                     required: true, minlength: 5, alphanumeric: true,
                     remote: {
                         url: "<?=site_url('login/check_user_exists');?>",
@@ -314,13 +312,13 @@ $meta = $this->menu_m->select_meta()->row();
                             }
                         }
                     } },
-                password: { required: true, minlength: 5 }
+                password_login: { required: true, minlength: 5 }
             },
             messages: {
-                username: {
+                username_login: {
                     required:'*) Username required', minlength:'Min. 5 Character', remote:'Username Not Found, Cannot Login'
                 },
-                password: { 
+                password_login: { 
                     required:'*) Password required', minlength:'Min. 5 Character'
                 },
             },

@@ -23,7 +23,7 @@ class Contact extends CI_Controller
         $rsp            = $this->recaptcha->verifyResponse($captcha_answer);
 
         if ($rsp['success']) {
-            $this->kontak_m->insert_data();
+            $this->contact_m->insert_data();
             $response = ['status' => 'success', 'message' => 'Your Message was Send Successfull.'];
         } else {
             $response = ['status' => 'failed', 'message' => 'Your Message Failed.'];

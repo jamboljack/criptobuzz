@@ -28,9 +28,9 @@
 	            </div>
 	            <div class="get-quote-form">
 	            	<form id="contact_form" method="post">
-	                	<p><label for="name">Name</label> <input id="name" name="name" type="text" placeholder="Enter your full name"></p>
-	                    <p><label for="email">Email</label> <input id="email" name="email" type="text" placeholder="Enter your email address"></p>
-	                    <p><label for="phone">Phone number</label> <input id="phone" name="phone" type="text" placeholder="Enter your phone number"></p>
+	                	<p><label for="name">Name</label> <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="off"></p>
+	                    <p><label for="email">Email</label> <input id="email" name="email" type="text" placeholder="Enter your email address" autocomplete="off"></p>
+	                    <p><label for="phone">Phone number</label> <input id="phone" name="phone" type="text" placeholder="Enter your phone number" autocomplete="off"></p>
 	                    <p><label for="message">I would like to discuss</label> <textarea name="message" id="message" cols="30" rows="10" placeholder="Type your message"></textarea></p>
 	                    <p>
 	                    	<?=$this->recaptcha->render();?>
@@ -49,6 +49,7 @@
     }
 </style>
 
+<script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
     $("#contact_form").validate({

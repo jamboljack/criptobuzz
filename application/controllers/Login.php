@@ -6,7 +6,6 @@ class Login extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->library('template_login');
         $this->load->model('login_m');
     }
 
@@ -31,7 +30,7 @@ class Login extends CI_Controller
     public function check_user_exists()
     {
         if (array_key_exists('username', $_POST)) {
-            if ($this->user_exists(stripHTMLtags($this->input->post('username', 'true'))) == true) {
+            if ($this->user_exists(stripHTMLtags($this->input->post('username_login', 'true'))) == true) {
                 echo json_encode(false);
             } else {
                 echo json_encode(true);
@@ -41,8 +40,8 @@ class Login extends CI_Controller
 
     public function validasi()
     {
-        $username = trim(stripHTMLtags($this->input->post('username', 'true')));
-        $password = trim(stripHTMLtags($this->input->post('password', 'true')));
+        $username = trim(stripHTMLtags($this->input->post('username_login', 'true')));
+        $password = trim(stripHTMLtags($this->input->post('password_login', 'true')));
         $temp_account = $this->login_m->check_user_account($username, sha1($password))->row();
         $num_account  = count($temp_account);
         if ($num_account > 0) {

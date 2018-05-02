@@ -45,7 +45,7 @@ class Message extends CI_Controller
             $row[] = date('d-m-Y', strtotime($r->message_post));
             $row[] = $r->message_name;
             $row[] = $r->message_email;
-            $row[] = $r->message_subject;
+            $row[] = $r->message_phone;
             $row[] = $r->message_message;
 
             $data[] = $row;

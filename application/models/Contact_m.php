@@ -23,7 +23,6 @@ class Contact_m extends CI_Model
         $data = array(
             'message_name'    => ucwords(strtolower(stripHTMLtags($this->input->post('name', 'true')))),
             'message_email'   => trim(stripHTMLtags($this->input->post('email', 'true'))),
-            'message_subject' => ucwords(strtolower(stripHTMLtags($this->input->post('subject', 'true')))),
             'message_phone'   => stripHTMLtags($this->input->post('phone', 'true')),
             'message_message' => trim(stripHTMLtags($this->input->post('message', 'true'))),
             'message_post'    => date('Y-m-d H:i:s'),
