@@ -123,6 +123,21 @@
                                     <?php } ?>
                                 </div>
 
+                                <?php
+                                $SideBanner = $this->menu_m->select_banner_side()->row();
+                                if (!empty($SideBanner->banner_image)) {
+                                    ?>
+                                <section class="ads wow fadeInRight">
+                                    <div class="container">
+                                        <div class="row">
+                                            <a href="<?=$SideBanner->banner_url;?>" target="_blank">
+                                                <img src="<?=base_url('img/banner_folder/' . $SideBanner->banner_image);?>" alt="ads">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                                <?php }?>
+
                                 <div class="most_Popular wow fadeInDown">
                                     <div class="most_popular-title">
                                         <h5 class=" header-color inline-block uppercase">Most Popular</h5>

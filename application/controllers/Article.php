@@ -27,13 +27,13 @@ class Article extends CI_Controller
         $this->template_front->display('front/article_view', $data);
     }
 
-    public function savecomment($article_seo)
+    public function savecomment($article_id)
     {
         $captcha_answer = $this->input->post('g-recaptcha-response');
         $rsp            = $this->recaptcha->verifyResponse($captcha_answer);
 
         if ($rsp['success']) {
-            $this->article_m->insert_comment($article_seo);
+            $this->article_m->insert_comment($article_id);
             $response = ['status' => 'success', 'message' => 'Thanks for Your Comment.'];
         } else {
             $response = ['status' => 'failed', 'message' => 'Your Comment Failed.'];

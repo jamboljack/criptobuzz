@@ -175,9 +175,16 @@
                                 <li class="comment even thread-even depth-1 parent" id="comment-22">
                                     <div id="div-comment-22" class="comment-body">
                                         <div class="comment-author vcard">
-                                            <img alt="" src="<?=base_url('img/icon/'.$r->user_avatar);?>" class="avatar avatar-55 photo" height="55" width="55" data-pin-no-hover="true">
+                                            <?php 
+                                            if (!empty($r->user_avatar)) {
+                                                $avatar = base_url('img/icon/'.$r->user_avatar);
+                                            } else {
+                                                $avatar = base_url('img/no-profil.png');
+                                            }
+                                            ?>
+                                            <img src="<?=$avatar;?>" class="avatar avatar-55 photo" height="55" width="55" data-pin-no-hover="true">
                                             <cite class="fn">
-                                                <a href="#" rel="external nofollow" class="url"><?=$r->user_name;?></a>
+                                                <a href="#" rel="external nofollow" class="url"><?=$r->user_username;?></a>
                                             </cite>
                                             <span class="says">says :</span>
                                         </div>
@@ -193,36 +200,32 @@
                                         </div> -->
                                     </div>
                                     <?php 
-                                    $comment_id = $r->comment_id;
-                                    $listReply = $this->article_m->select_reply($comment_id)->result();
-                                    if (count($listReply) > 0) {
+                                    if (!empty($r->comment_reply)) {
+                                        if (!empty($r->avatar_reply)) {
+                                            $avatar_admin = base_url('img/icon/'.$r->avatar_reply);
+                                        } else {
+                                            $avatar_admin = base_url('img/no-profil.png');
+                                        }
                                     ?>
                                     <ul class="children">
-                                        <?php 
-                                        foreach($listReply as $p) {
-                                        ?>
                                         <li class="comment odd alt depth-2 parent" id="comment-64">
                                             <div id="div-comment-64" class="comment-body">
                                                 <div class="comment-author vcard">
-                                                    <img alt="" src="assets/images/blogpost/autor1.png" class="avatar avatar-55 photo"   width="100" data-pin-no-hover="true">
+                                                    <img alt="" src="<?=$avatar_admin;?>" class="avatar avatar-55 photo"   width="100" data-pin-no-hover="true">
                                                     <cite class="fn">
-                                                        <a href="#" rel="external nofollow" class="url">Admin</a>
+                                                        <a href="#" rel="external nofollow" class="url"><?=$r->user_reply;?></a>
                                                     </cite>
-                                                    <span class="says">says:</span>
+                                                    <span class="says">says :</span>
                                                 </div>
                                                 <div class="comment-meta commentmetadata">
                                                     <i class="fa fa-clock-o"></i>
                                                     <a href="#"> 1 months ago </a>
                                                 </div>
                                                 <div class="comment-content">
-                                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>
-                                                </div>
-                                                <div class="reply">
-                                                    <a rel="nofollow" class="comment-reply-link" href="#" onclick="return addComment.moveForm( &quot;div-comment-64&quot;, &quot;64&quot;, &quot;respond&quot;, &quot;1439&quot; )" aria-label="Reply to Dylan McKenzie">Reply</a>
+                                                    <?=$r->comment_reply;?>
                                                 </div>
                                             </div>
                                         </li>
-                                        <?php } ?>
                                     </ul>
                                     <?php } ?>
                                 </li>
@@ -327,6 +330,21 @@
                                     <?php } ?>
                                 </div>
 
+                                <?php
+                                $SideBanner = $this->menu_m->select_banner_side()->row();
+                                if (!empty($SideBanner->banner_image)) {
+                                    ?>
+                                <section class="ads wow fadeInRight">
+                                    <div class="container">
+                                        <div class="row">
+                                            <a href="<?=$SideBanner->banner_url;?>" target="_blank">
+                                                <img src="<?=base_url('img/banner_folder/' . $SideBanner->banner_image);?>" alt="ads">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </section>
+                                <?php }?>
+
                                 <div class="most_Popular wow fadeInDown">
                                     <div class="most_popular-title">
                                         <h5 class=" header-color inline-block uppercase">Most Popular</h5>
@@ -367,14 +385,16 @@
     }
 </style>
 
-<script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
 <script>
 $(function(){
     $.getJSON( "http://graph.facebook.com/<?=$linkurl;?>", function( data ) {
         $('#jmlsharefb').html(data.share.share_count);
     });
 });
+</script>
 
+<script type="text/javascript" src="<?=base_url();?>backend/assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+<script type="text/javascript">
 jQuery(document).ready(function($) {
     $("#msgCommentSuccess").hide();
     $("#msgCommentFailed").hide();
@@ -397,10 +417,10 @@ jQuery(document).ready(function($) {
             }
         },
         submitHandler: function(form) {
-            var article_seo = <?=$detail->article_seo;?>;
+            var article_id = <?=$detail->article_id;?>;
             dataString = $("#commentForm").serialize();
             $.ajax({
-                url: "<?=site_url('article/savecomment/');?>"+article_seo,
+                url: "<?=site_url('article/savecomment/');?>"+article_id,
                 type: "POST",
                 dataType: 'json',
                 data: dataString,

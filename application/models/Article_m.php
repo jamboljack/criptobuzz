@@ -72,21 +72,11 @@ class Article_m extends CI_Model
         return $this->db->get();
     }
 
-    public function select_reply($article_seo)
+    public function insert_comment($article_id)
     {
-        $this->db->select('*');
-        $this->db->from('v_reply');
-        $this->db->where('comment_id', $comment_id);
-        $this->db->order_by('reply_post', 'asc');
-
-        return $this->db->get();
-    }
-
-    public function insert_comment($article_seo)
-    {
-        $article    = $this->db->get_where('cripto_article', array('article_seo' => $article_seo))->row();
-        $article_id = $article->article_id;
-        $data       = array(
+        // $article    = $this->db->get_where('cripto_article', array('article_seo' => $article_seo))->row();
+        // $article_id = $article->article_id;
+        $data = array(
             'user_username' => $this->session->userdata('username_member'),
             'comment_desc'  => trim(stripHTMLtags($this->input->post('comment', 'true'))),
             'article_id'    => $article_id,

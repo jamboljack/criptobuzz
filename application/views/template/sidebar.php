@@ -16,6 +16,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';    
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -35,6 +36,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -54,6 +56,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -73,6 +76,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -92,6 +96,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -111,6 +116,7 @@ if ($uri == 'home') {
     $maincategory   = 'active';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -130,6 +136,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = 'active';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -149,6 +156,27 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = 'active';
+    $comment        = '';
+    $banner         = '';
+    $social         = '';
+    $message        = '';
+    $users          = '';
+} elseif ($uri == 'comment') {
+    $dashboard      = '';
+    $meta           = '';
+    $contact        = '';
+    $content        = '';
+    $block          = '';
+    $span_block_1   = '';
+    $span_block_2   = '';
+    $information    = '';
+    $menu           = '';
+    $span_menu_1    = '';
+    $span_menu_2    = '';
+    $maincategory   = '';
+    $category       = '';
+    $article        = '';
+    $comment        = 'active';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -168,6 +196,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = 'active';
     $social         = '';
     $message        = '';
@@ -187,6 +216,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = 'active';
     $message        = '';
@@ -206,6 +236,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = 'active';
@@ -225,6 +256,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -244,6 +276,7 @@ if ($uri == 'home') {
     $maincategory   = '';
     $category       = '';
     $article        = '';
+    $comment        = '';
     $banner         = '';
     $social         = '';
     $message        = '';
@@ -315,6 +348,11 @@ if ($uri == 'home') {
             <li class="tooltips <?=$article;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Article">
                 <a href="<?=site_url('admin/article');?>">
                     <i class="icon-screen-tablet"></i><span class="title"> Article</span>
+                </a>
+            </li>
+            <li class="tooltips <?=$comment;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Comment">
+                <a href="<?=site_url('admin/comment');?>">
+                    <i class="fa fa-comment"></i><span class="title"> Comment</span>
                 </a>
             </li>
             <li class="tooltips <?=$banner;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Banner">

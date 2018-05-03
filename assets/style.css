@@ -1372,6 +1372,7 @@ section.bussines_latest_post.clearfix {
     margin-bottom: 0px;
 }
 .post-block-science.post-float .post-thumb {
+    width:36%;
     float: left;
     position: relative;
     z-index: 1;
