@@ -7,6 +7,7 @@ class Login extends CI_Controller
     {
         parent::__construct();
         $this->load->model('login_m');
+        $this->load->library('template_front');
     }
 
     public function index()
@@ -14,9 +15,9 @@ class Login extends CI_Controller
         redirect(site_url('my_error'));
     }
 
-    private function user_exists($username)
+    private function user_exists($username_login)
     {
-        $this->db->where('user_username', $username);
+        $this->db->where('user_username', $username_login);
         $this->db->where('user_level', 'Member');
         $this->db->where('user_status', 'Aktif');
         $query = $this->db->get('cripto_users');
@@ -29,7 +30,7 @@ class Login extends CI_Controller
 
     public function check_user_exists()
     {
-        if (array_key_exists('username', $_POST)) {
+        if (array_key_exists('username_login', $_POST)) {
             if ($this->user_exists(stripHTMLtags($this->input->post('username_login', 'true'))) == true) {
                 echo json_encode(false);
             } else {
@@ -60,6 +61,45 @@ class Login extends CI_Controller
         }
 
         echo json_encode($response);
+    }
+
+    private function email_exists($email_forgot)
+    {
+        $this->db->where('user_email', $email_forgot);
+        $this->db->where('user_level', 'Member');
+        $this->db->where('user_status', 'Aktif');
+        $query = $this->db->get('cripto_users');
+        if ($query->num_rows() > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public function check_email_exists()
+    {
+        if (array_key_exists('email_forgot', $_POST)) {
+            if ($this->email_exists(stripHTMLtags($this->input->post('email_forgot', 'true'))) == true) {
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+            }
+        }
+    }
+
+    public function sendmailreset()
+    {
+        $this->login_m->reset_data();
+    }
+
+    public function resetpassword()
+    {
+        $this->template_front->display('front/reset_pass_view');
+    }
+
+    public function updatepassword()
+    {
+        $this->login_m->update_password();
     }
 
     public function logout()

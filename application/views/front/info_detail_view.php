@@ -28,7 +28,7 @@
                                     <span class="sharetext">shares</span>
                                 </div>
                                 <div class="jeg_views_count">
-                                    <div class="counts"><?=$detail->information_read;?></div>
+                                    <div class="counts"><?=number_format($detail->information_read,0,'','');?></div>
                                     <span class="sharetext">views</span>
                                 </div>
                             </div>

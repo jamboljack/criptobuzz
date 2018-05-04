@@ -18,13 +18,26 @@ class Article extends CI_Controller
 
     public function detail($article_seo)
     {
-        $data['listRecomend'] = $this->article_m->select_recomended($article_seo)->result();
-        $data['listMost']     = $this->article_m->select_most_popular($article_seo)->result();
-        $data['detail']       = $this->article_m->select_by_id($article_seo)->row();
-        $data['editor']       = $this->article_m->select_editor_by_id($article_seo)->row();
-        $data['listOther']    = $this->article_m->select_other($article_seo)->result();
-        $data['listComment']  = $this->article_m->select_list_comment($article_seo)->result();
-        $this->template_front->display('front/article_view', $data);
+        $checkdata = $this->db->get_where('cripto_article', array('article_seo' => $article_seo))->row();
+        if (count($checkdata) == 0) {
+            redirect(site_url('my_error'));
+        } else {
+            // Update Read
+            $dataRead = array(
+                'article_read' => ($checkdata->article_read + 1),
+            );
+            $this->db->where('article_seo', $article_seo);
+            $this->db->update('cripto_article', $dataRead);
+
+            $data['listRecomend'] = $this->article_m->select_recomended($article_seo)->result();
+            $data['listMost']     = $this->article_m->select_most_popular($article_seo)->result();
+            $data['detail']       = $this->article_m->select_by_id($article_seo)->row();
+            $data['editor']       = $this->article_m->select_editor_by_id($article_seo)->row();
+            $data['listOther']    = $this->article_m->select_other($article_seo)->result();
+            $data['listComment']  = $this->article_m->select_list_comment($article_seo)->result();
+
+            $this->template_front->display('front/article_view', $data);
+        }
     }
 
     public function savecomment($article_id)

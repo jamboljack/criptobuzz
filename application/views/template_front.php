@@ -144,9 +144,10 @@ $meta = $this->menu_m->select_meta()->row();
                 <h3>Retrieve your password</h3>
                 <button class="close_register" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <p>Please enter your email address to reset your password.</p>
-                <div class="form-message"></div>
+                <div class="form-message alert alert-danger" id="msgBoxForgotError"></div>
+                <div class="form-message alert alert-success" id="msgBoxForgotSuccess"></div>
                 <p class="input_field">
-                    <input type="text" name="forgot" placeholder="Your Email" autocomplete="off" required>
+                    <input type="text" name="email_forgot" id="email_forgot" placeholder="Your Email" autocomplete="off" required>
                 </p>
                 <p class="submit">
                     <input type="submit" name="jeg_login_button" class="button" value="Reset Password" data-process="Processing . . ." data-string="Reset Password">
@@ -291,10 +292,14 @@ $meta = $this->menu_m->select_meta()->row();
     });
 
     function resetformSignUp() {
-        $("#email").val('');
-        $("#username").val('');
-        $("#password").val('');
-        $("#confirmpassword").val('');
+        $("#email_sign").val('');
+        $("#username_sign").val('');
+        $("#password_sign").val('');
+        $("#confirmpassword_sign").val('');
+    }
+
+    function resetformForgot() {
+        $("#email_forgot").val('');
     }
 
     jQuery(document).ready(function($) {
@@ -311,7 +316,8 @@ $meta = $this->menu_m->select_meta()->row();
                                 return $("#username").val(); 
                             }
                         }
-                    } },
+                    } 
+                },
                 password_login: { required: true, minlength: 5 }
             },
             messages: {
@@ -339,6 +345,55 @@ $meta = $this->menu_m->select_meta()->row();
                     },
                     error: function() {
                         alert("Error, Process Login Failed.");
+                    }
+                });
+            }
+        });
+    });
+
+    jQuery(document).ready(function($) {
+        $("#msgBoxForgotSuccess").hide();
+        $("#msgBoxForgotError").hide();
+        $("#formForgot").validate({
+            rules: { 
+                email_forgot: { 
+                    required: true, minlength: 5, email: true,
+                    remote: {
+                        url: "<?=site_url('login/check_email_exists');?>",
+                        type: "post",
+                        data: {
+                            email_forgot: function() { 
+                                return $("#email_forgot").val(); 
+                            }
+                        }
+                    } 
+                }
+            },
+            messages: {
+                email_forgot: {
+                    required:'*) Email required', minlength:'Min. 5 Character', email:'Email Not Valid', 
+                    remote:'Email Not Registered'
+                }
+            },
+            submitHandler: function(form) {
+                dataString = $("#formForgot").serialize();
+                $.ajax({
+                    url: "<?=site_url('login/sendmailreset');?>",
+                    type: "POST",
+                    dataType: 'json',
+                    data: dataString,
+                    success: function(data) {
+                        if (data.status === 'success') {
+                            $("#msgBoxForgotSuccess").show();
+                            $("#msgBoxForgotSuccess").text(data.message);
+                        } else {
+                            $("#msgBoxForgotError").show();
+                            $("#msgBoxForgotError").text(data.message);
+                        }
+                resetformForgot();
+                    },
+                    error: function() {
+                        alert("Error, Reset Password Failed.");
                     }
                 });
             }

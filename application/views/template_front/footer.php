@@ -1,5 +1,5 @@
-<?php 
-$meta = $this->menu_m->select_meta()->row();
+<?php
+$meta    = $this->menu_m->select_meta()->row();
 $contact = $this->menu_m->select_contact()->row();
 ?>
 <footer>
@@ -8,20 +8,20 @@ $contact = $this->menu_m->select_contact()->row();
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-md-3 col-sm-6">
-                        <img src="<?=base_url('img/'.$contact->contact_image);?>" alt="">
-                        <p class="foot">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla possimus nihil iure non soluta, molestiae id, debitis dicta distinctio reprehenderit repellat odit delectus temporibus, quas, qui reiciendis quos dolores adipisci?</p>
-                        
+                        <img src="<?=base_url('img/' . $contact->contact_image);?>" alt="">
+                        <p class="foot"><?=$contact->contact_desc;?></p>
+
                         <p class="left">Follow US :</p>
                         <div style="float:left;">
                             <ul class="footer_social_links">
                                 <?php
                                 $listSocial = $this->menu_m->select_social()->result();
-                                foreach($listSocial as $r) {
-                                ?>
+                                foreach ($listSocial as $r) {
+                                    ?>
                                 <li>
                                     <a href="<?=$r->social_url;?>" target="_blank"><span><i class="fa fa-<?=$r->social_class;?>"></i></span></a>
                                 </li>
-                                <?php } ?>
+                                <?php }?>
                             </ul>
                         </div>
                     </div>
@@ -81,10 +81,10 @@ $contact = $this->menu_m->select_contact()->row();
                                 <ul class="quick_links">
                                     <?php
                                     $listMenu = $this->menu_m->select_menu()->result();
-                                    foreach($listMenu as $r) {
-                                    ?>
-                                    <li><a href="<?=site_url('menu/'.$r->menu_seo);?>"><?=$r->menu_title;?></a></li>
-                                    <?php } ?>
+                                    foreach ($listMenu as $r) {
+                                        ?>
+                                    <li><a href="<?=site_url('menu/' . $r->menu_seo);?>"><?=$r->menu_title;?></a></li>
+                                    <?php }?>
                                     <li><a href="<?=site_url('contact');?>">Contact Us</a></li>
                                 </ul>
                             </div>

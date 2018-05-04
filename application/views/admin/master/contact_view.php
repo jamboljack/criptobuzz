@@ -90,6 +90,15 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label">Description</label>
+                                    <div class="col-md-9">
+                                        <div class="input-icon right">
+                                            <i class="fa"></i>
+                                            <textarea class="form-control" rows="10" name="desc"><?=$detail->contact_desc;?></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Foto</label>
                                     <div class="col-md-5">
                                         <?php if (empty($detail->contact_image)) { ?>
@@ -162,14 +171,16 @@ $(document).ready(function() {
             address: { required: true },
             phone: { required: true },
             email: { required: true, email: true },
-            web: { required: true, url: true }
+            web: { required: true, url: true },
+            desc: { required: true }
         },
         messages: {
             name: { required :'Name required' },
             address: { required :'Address required' },
             phone: { required :'Phone required' },
             email: { required :'Email required', email: 'Email not Valid' },
-            web: { required :'Website required', url: 'URL not Valid' }
+            web: { required :'Website required', url: 'URL not Valid' },
+            desc: { required :'Description required' }
         },
         invalidHandler: function (event, validator) {
             success.hide();
