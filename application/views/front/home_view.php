@@ -482,18 +482,18 @@
                                     </div>
                                 </div>
 
-                                <div class="sidebar sidebar-right  wow fadeInUp">
+                                <!-- <div class="sidebar sidebar-right  wow fadeInUp">
                                     <div class="subscribe-me text-center">
                                         <h5>Subscribe to our mailing list to receives daily updates direct to your inbox!</h5>
-                                        <form action="#" method="post" id="popup-subscribe-form" name="subscribe-form">
+                                        <form method="post" id="formSubscribe" name="subscribe-form">
                                         <div class="input-group">
-                                            <input placeholder="Enter your email" name="email" type="text">
+                                            <input placeholder="Enter your email" name="email_subs" id="email_subs" type="text" autocomplete="off" required>
                                             <button type="submit" name="subscribe">sign up</button>
                                             <p class="note">*we hate spam as much as you do</p>
                                         </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <div class="Stay_conected wow fadeInUp">
                                     <div class="Stay_conected_title ">

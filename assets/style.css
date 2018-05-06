@@ -474,7 +474,7 @@ a:hover, a:focus, a:active {
 }
 .st_search_box div input {
     /* border: 1px solid #636363; */
-    color: #fff;
+    color: #000;
     font-size: 14px;
     /* height: 30px; */
     line-height: 24px;
@@ -3423,7 +3423,7 @@ footer {
 .newsletter .email_input {
     background: none repeat scroll 0px 0px #fff;
     border: 0px none;
-    color: #dbdbdb;
+    color: #000;
     float: left;
     font-size: 13px;
     font-weight: 600;

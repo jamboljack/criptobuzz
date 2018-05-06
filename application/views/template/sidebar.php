@@ -15,11 +15,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
-    $comment        = '';    
+    $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'meta') {
     $dashboard      = '';
@@ -35,11 +42,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'contact') {
     $dashboard      = '';
@@ -55,11 +69,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'content') {
     $dashboard      = '';
@@ -75,11 +96,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'information') {
     $dashboard      = '';
@@ -95,11 +123,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'maincategory') {
     $dashboard      = '';
@@ -115,11 +150,18 @@ if ($uri == 'home') {
     $span_menu_2    = 'open';
     $maincategory   = 'active';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'category') {
     $dashboard      = '';
@@ -135,11 +177,18 @@ if ($uri == 'home') {
     $span_menu_2    = 'open';
     $maincategory   = '';
     $category       = 'active';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'article') {
     $dashboard      = '';
@@ -155,11 +204,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = 'active open';
+    $span_art_1     = '<span class="selected"></span>';
+    $span_art_2     = 'open';
     $article        = 'active';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'comment') {
     $dashboard      = '';
@@ -175,11 +231,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = 'active open';
+    $span_art_1     = '<span class="selected"></span>';
+    $span_art_2     = 'open';
     $article        = '';
     $comment        = 'active';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'banner') {
     $dashboard      = '';
@@ -195,11 +258,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = 'active open';
+    $span_other_1   = '<span class="selected"></span>';
+    $span_other_2   = 'open';
     $banner         = 'active';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'social') {
     $dashboard      = '';
@@ -215,11 +285,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = 'active open';
+    $span_other_1   = '<span class="selected"></span>';
+    $span_other_2   = 'open';
     $banner         = '';
     $social         = 'active';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'message') {
     $dashboard      = '';
@@ -235,11 +312,45 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = 'active open';
+    $span_other_1   = '<span class="selected"></span>';
+    $span_other_2   = 'open';
     $banner         = '';
     $social         = '';
     $message        = 'active';
+    $subscribe      = '';
+    $users          = '';
+} elseif ($uri == 'subscribe') {
+    $dashboard      = '';
+    $meta           = '';
+    $contact        = '';
+    $content        = '';
+    $block          = '';
+    $span_block_1   = '';
+    $span_block_2   = '';
+    $information    = '';
+    $menu           = '';
+    $span_menu_1    = '';
+    $span_menu_2    = '';
+    $maincategory   = '';
+    $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
+    $article        = '';
+    $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
+    $banner         = '';
+    $social         = '';
+    $message        = '';
+    $subscribe      = 'active';
     $users          = '';
 } elseif ($uri == 'users') {
     $dashboard      = '';
@@ -255,11 +366,18 @@ if ($uri == 'home') {
     $span_menu_2    = '';
     $maincategory   = '';
     $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = 'active';
 } else {
     $dashboard      = 'active';
@@ -274,12 +392,19 @@ if ($uri == 'home') {
     $span_menu_1    = '';
     $span_menu_2    = '';
     $maincategory   = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
     $category       = '';
     $article        = '';
     $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
     $banner         = '';
     $social         = '';
     $message        = '';
+    $subscribe      = '';
     $users          = '';
 }
 ?>
@@ -345,29 +470,44 @@ if ($uri == 'home') {
                     </li>                    
                 </ul>
             </li>
-            <li class="tooltips <?=$article;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Article">
-                <a href="<?=site_url('admin/article');?>">
-                    <i class="icon-screen-tablet"></i><span class="title"> Article</span>
+            <li class="<?=$art;?>">
+                <a href="#">
+                    <i class="icon-screen-tablet"></i>
+                    <span class="title">Article</span>
+                    <?=$span_art_1;?>
+                    <span class="arrow <?=$span_art_2;?>"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="<?=$article;?>"><a href="<?=site_url('admin/article');?>">
+                        <i class="fa fa-location-arrow"></i> Article</a>
+                    </li>
+                    <li class="<?=$comment;?>"><a href="<?=site_url('admin/comment');?>">
+                        <i class="fa fa-location-arrow"></i> Comment</a>
+                    </li>                    
+                </ul>
             </li>
-            <li class="tooltips <?=$comment;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Comment">
-                <a href="<?=site_url('admin/comment');?>">
-                    <i class="fa fa-comment"></i><span class="title"> Comment</span>
+            <li class="<?=$other;?>">
+                <a href="#">
+                    <i class="icon-docs"></i>
+                    <span class="title">Other</span>
+                    <?=$span_other_1;?>
+                    <span class="arrow <?=$span_other_2;?>"></span>
                 </a>
+                <ul class="sub-menu">
+                    <li class="<?=$banner;?>"><a href="<?=site_url('admin/banner');?>">
+                        <i class="fa fa-location-arrow"></i> Banner</a>
+                    </li>
+                    <li class="<?=$social;?>"><a href="<?=site_url('admin/social');?>">
+                        <i class="fa fa-location-arrow"></i> Social Media</a>
+                    </li>
+                    <li class="<?=$message;?>"><a href="<?=site_url('admin/message');?>">
+                        <i class="fa fa-location-arrow"></i> Message</a>
+                    </li>
+                </ul>
             </li>
-            <li class="tooltips <?=$banner;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Banner">
-                <a href="<?=site_url('admin/banner');?>">
-                    <i class="fa fa-image"></i><span class="title"> Banner</span>
-                </a>
-            </li>
-            <li class="tooltips <?=$social;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Social Media">
-                <a href="<?=site_url('admin/social');?>">
-                    <i class="fa fa-spinner"></i><span class="title"> Social Media</span>
-                </a>
-            </li>
-            <li class="tooltips <?=$message;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Message">
-                <a href="<?=site_url('admin/message');?>">
-                    <i class="fa fa-comments"></i><span class="title"> Message</span>
+            <li class="tooltips <?=$subscribe;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Subscribes">
+                <a href="<?=site_url('admin/subscribe');?>">
+                    <i class="icon-envelope"></i><span class="title"> Subscribes</span>
                 </a>
             </li>
             <li class="heading">

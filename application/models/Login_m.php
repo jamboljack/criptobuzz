@@ -67,5 +67,16 @@ class Login_m extends CI_Model
         $this->db->where('user_key_forgot', $user_key_forgot);
         $this->db->update('cripto_users', $data);
     }
+
+    public function insert_subscribe()
+    {
+        $data = array(
+            'subscribe_email'  => trim(stripHTMLtags($this->input->post('email_subs', 'true'))),
+            'subscribe_date'   => date('Y-m-d H:i:s'),
+            'subscribe_update' => date('Y-m-d H:i:s'),
+        );
+
+        $this->db->insert('cripto_subscribe', $data);
+    }
 }
 /* Location: ./application/model/Login_m.php */

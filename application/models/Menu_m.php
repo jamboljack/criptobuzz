@@ -140,5 +140,14 @@ class Menu_m extends CI_Model
 
         return $this->db->get();
     }
+
+    public function select_category()
+    {
+        $this->db->select('*');
+        $this->db->from('cripto_category');
+        $this->db->order_by('category_id', 'asc');
+
+        return $this->db->get();
+    }
 }
 /* Location: ./application/model/Menu_m.php */

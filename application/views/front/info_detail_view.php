@@ -87,7 +87,7 @@
                     </div>
                 </div>
 
-                <div class="sidebar sidebar-right  wow fadeInUp">
+                <!-- <div class="sidebar sidebar-right  wow fadeInUp">
                     <div class="subscribe-me text-center">
                         <h5>Subscribe to our mailing list to receives daily updates direct to your inbox!</h5>
                         <form action="#" method="post" id="popup-subscribe-form" name="subscribe-form">
@@ -98,7 +98,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="recomended wow fadeInDown">
                     <div class="recomended_title">

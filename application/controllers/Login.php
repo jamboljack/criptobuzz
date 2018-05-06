@@ -102,6 +102,33 @@ class Login extends CI_Controller
         $this->login_m->update_password();
     }
 
+    public function savesubscribe()
+    {
+        $this->login_m->insert_subscribe();
+    }    
+
+    private function subs_exists($email_subs)
+    {
+        $this->db->where('subscribe_email', $email_subs);
+        $query = $this->db->get('cripto_subscribe');
+        if ($query->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function check_subs_exists()
+    {
+        if (array_key_exists('email_subs', $_POST)) {
+            if ($this->subs_exists(stripHTMLtags($this->input->post('email_subs', 'true'))) == true) {
+                echo json_encode(false);
+            } else {
+                echo json_encode(true);
+            }
+        }
+    }
+
     public function logout()
     {
         $this->output->set_header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . 'GMT');
