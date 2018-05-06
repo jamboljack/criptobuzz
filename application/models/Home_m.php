@@ -39,6 +39,16 @@ class Home_m extends CI_Model
         return $this->db->get();
     }
 
+    public function select_comment()
+    {
+        $this->db->select('*');
+        $this->db->from('v_comment');
+        $this->db->order_by('comment_id', 'desc');
+        $this->db->limit(5);
+
+        return $this->db->get();
+    }
+
     public function select_feature_small()
     {
         $this->db->select('*');
@@ -116,6 +126,15 @@ class Home_m extends CI_Model
         );
 
         $this->db->insert('my_message', $data);
+    }
+
+    function select_science() {
+        $this->db->select('*');
+        $this->db->from('cripto_science');
+        $this->db->order_by('science_id', 'desc');
+        $this->db->limit(5);
+
+        return $this->db->get();
     }
 }
 /* Location: ./application/model/Home_m.php */

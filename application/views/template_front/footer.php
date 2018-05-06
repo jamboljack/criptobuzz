@@ -8,7 +8,7 @@ $listCategory   = $this->menu_m->select_category()->result();
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-7 col-sm-6">
+                    <div class="col-md-8">
                         <img src="<?=base_url('img/' . $contact->contact_image);?>" alt="">
                         <p class="foot"><?=$contact->contact_desc;?></p>
 
@@ -54,14 +54,14 @@ $listCategory   = $this->menu_m->select_category()->result();
                             </div>
                         </div>
                     </div> -->
-                    <div class="col-md-5 col-sm-6">
+                    <div class="col-md-4">
                         <div class="newsletter">
                             <h3>NEWSLETTER</h3>
                             <p>Subscribe to our mailing list to receives daily updates direct to your inbox!</p>
                             <div class="newsletter">
                                 <form method="post" id="formSubscribe">
                                     <input class="email_input" type="text" name="email_subs" id="email_subs" placeholder="Your Email Address" autocomplete="off" required>
-                                    <input value="Subscribe" class="email_submit " type="submit">
+                                    <input value="Sign Up" class="email_submit " type="submit">
                                 </form>
                             </div>
                             <p class="litle">*we hate spam as much as you do </p>

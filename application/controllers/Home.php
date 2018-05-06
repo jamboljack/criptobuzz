@@ -20,6 +20,8 @@ class Home extends CI_Controller
         $data['listMain']         = $this->home_m->select_maincategory()->result();
         $data['listRecomend']     = $this->home_m->select_recomended()->result();
         $data['listMost']         = $this->home_m->select_most_popular()->result();
+        $data['listScience']      = $this->home_m->select_science()->result();
+        $data['listComment']      = $this->home_m->select_comment()->result();
         $config['uri_segment']    = 3;
         $config['base_url']       = site_url() . 'article/index';
         $config['total_rows']     = $this->home_m->count_all();

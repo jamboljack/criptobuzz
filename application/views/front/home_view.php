@@ -181,26 +181,29 @@
                                     </div>
                                     
                                     <div id="comments_posts" class="zm-posts tab-pane fade">
-
+                                        <?php foreach($listComment as $r) { ?>
                                         <article class="zm-post-lay-e zm-single-post clearfix">
                                             <div class="zm-post-thumb f-left">
-                                                <a href="blog-single.html"><img src="assets/images/trend/trend2.jpg" alt="img"></a>
+                                                <a href="<?=site_url('article/post/'.$r->article_seo);?>">
+                                                    <img src="<?=base_url('img/article_folder/thumbs/'.$r->article_image);?>" alt="img">
+                                                </a>
                                             </div>
                                             <div class="zm-post-dis f-right">
                                                 <div class="zm-post-header">
-                                                    <h3 class="zm-post-title"><a href="blog-single.html">Magna aliqua ut enim ad minim veniam quis nostrud.</a></h3>
+                                                    <a href="<?=site_url('article/post/'.$r->article_seo);?>">
+                                                    <h3 class="zm-post-title"><?=word_limiter($r->article_title, 7);?></h3>
+                                                    </a>
                                                     <div class="zm-post-meta">
                                                         <ul>
-                                                            <li class="s-meta"><a href="#" class="zm-author"></a></li>
                                                             <li class="s-meta">
-                                                                <i class="fa fa-clock-o"></i><a href="#" class="zm-date">April 18, 2016</a>
+                                                                <i class="fa fa-clock-o"></i><a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->comment_post));?></a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </article>
-
+                                        <?php } ?>
                                     </div>
                                     
                                     <div id="trending_posts" class="zm-posts tab-pane fade">
@@ -494,6 +497,60 @@
                                         </form>
                                     </div>
                                 </div> -->
+
+                                <div class="science wow fadeInRight">
+                                    <div class="science-title">
+                                        <h5 class=" header-color inline-block uppercase">Science</h5>
+                                    </div>
+                                    <hr>
+                                    <?php 
+                                    $no = 1;
+                                    foreach($listScience as $r) {
+                                        if ($no == 1) {
+                                    ?>
+                                    <div class="post-thumb">
+                                        <embed src="https://www.youtube.com/embed/<?=$r->science_url;?>" width="100%">
+                                    </div>
+                                    <div class="articel">
+                                        <h4><?=$r->science_title;?></h4>
+                                        <div class="zm-post-meta">
+                                            <ul>
+                                                <li class="s-meta">
+                                                    <i class="fa fa-clock-o"></i><a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->science_post));?></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+
+                                    <?php if (count($listScience) > 1) { ?>
+                                    <div class="post-block-science post-float clearfix">
+                                        <?php 
+                                        if ($no > 1) {
+                                        ?>
+                                        <div class="post-thumb">
+                                            <embed src="https://www.youtube.com/embed/<?=$r->science_url;?>" width="100%">
+                                        </div>
+                                        <div class="post-content">
+                                            <h5 class="post-title-title-small">
+                                                <a href="#"><?=$r->science_title;?></a>
+                                            </h5>
+                                            <div class="zm-post-meta">
+                                                <ul>
+                                                    <li class="s-meta">
+                                                        <i class="fa fa-clock-o"></i><a href="#" class="zm-date"><?=date("l jS F Y", strtotime($r->science_post));?></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <?php } ?>
+                                    </div>
+                                    <?php 
+                                        }
+                                        $no++;
+                                    } 
+                                    ?>
+                                </div>
 
                                 <div class="Stay_conected wow fadeInUp">
                                     <div class="Stay_conected_title ">

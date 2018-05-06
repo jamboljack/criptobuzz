@@ -26,6 +26,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'meta') {
@@ -53,6 +54,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'contact') {
@@ -80,6 +82,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'content') {
@@ -107,6 +110,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'information') {
@@ -134,6 +138,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'maincategory') {
@@ -161,6 +166,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'category') {
@@ -188,6 +194,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'article') {
@@ -215,6 +222,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'comment') {
@@ -242,6 +250,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'banner') {
@@ -269,6 +278,7 @@ if ($uri == 'home') {
     $banner         = 'active';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'social') {
@@ -296,6 +306,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = 'active';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'message') {
@@ -323,6 +334,35 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = 'active';
+    $science        = '';
+    $subscribe      = '';
+    $users          = '';
+} elseif ($uri == 'science') {
+    $dashboard      = '';
+    $meta           = '';
+    $contact        = '';
+    $content        = '';
+    $block          = '';
+    $span_block_1   = '';
+    $span_block_2   = '';
+    $information    = '';
+    $menu           = '';
+    $span_menu_1    = '';
+    $span_menu_2    = '';
+    $maincategory   = '';
+    $category       = '';
+    $art            = '';
+    $span_art_1     = '';
+    $span_art_2     = '';
+    $article        = '';
+    $comment        = '';
+    $other          = '';
+    $span_other_1   = '';
+    $span_other_2   = '';
+    $banner         = '';
+    $social         = '';
+    $message        = '';
+    $science        = 'active';
     $subscribe      = '';
     $users          = '';
 } elseif ($uri == 'subscribe') {
@@ -350,6 +390,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = 'active';
     $users          = '';
 } elseif ($uri == 'users') {
@@ -377,6 +418,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = 'active';
 } else {
@@ -404,6 +446,7 @@ if ($uri == 'home') {
     $banner         = '';
     $social         = '';
     $message        = '';
+    $science        = '';
     $subscribe      = '';
     $users          = '';
 }
@@ -504,6 +547,11 @@ if ($uri == 'home') {
                         <i class="fa fa-location-arrow"></i> Message</a>
                     </li>
                 </ul>
+            </li>
+            <li class="tooltips <?=$science;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Science">
+                <a href="<?=site_url('admin/science');?>">
+                    <i class="icon-social-youtube"></i><span class="title"> Science</span>
+                </a>
             </li>
             <li class="tooltips <?=$subscribe;?>" data-container="body" data-placement="right" data-html="true" data-original-title="Subscribes">
                 <a href="<?=site_url('admin/subscribe');?>">
