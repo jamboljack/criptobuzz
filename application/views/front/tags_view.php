@@ -4,7 +4,7 @@
             <div class="col-md-8 content">
                 <div class="latest_post clearfix wow fadeInDown">
                     <div class="section-title">
-                        <h5 class=" header-color inline-block uppercase">Latest Post</h5>
+                        <h5 class=" header-color inline-block uppercase">Tags <?=$this->uri->segment(2);?></h5>
                     </div>
                     <hr>
                     

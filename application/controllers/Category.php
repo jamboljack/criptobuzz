@@ -12,10 +12,11 @@ class Category extends CI_Controller
 
     public function index($maincategory_seo, $offset = 0)
     {
+        $offset                   = $this->uri->segment(4);
         $data['listRecomend']     = $this->category_m->select_recomended($maincategory_seo)->result();
         $data['listMost']         = $this->category_m->select_most_popular($maincategory_seo)->result();
-        $config['uri_segment']    = 3;
-        $config['base_url']       = site_url() . 'category/index';
+        $config['uri_segment']    = 4;
+        $config['base_url']       = site_url() . 'category/'.$maincategory_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all($maincategory_seo);
         $config['per_page']       = 10;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
@@ -26,8 +27,8 @@ class Category extends CI_Controller
         $config['next_link']      = '<i class="fa fa-chevron-right"></i>';
         $config['next_tag_open']  = '<li>';
         $config['next_tag_close'] = '</li>';
-        $config['cur_tag_open']   = '<li class="active">';
-        $config['cur_tag_close']  = '</li>';
+        $config['cur_tag_open']   = '<li class="active"><a href="#">';
+        $config['cur_tag_close']  = '</a></li>';
         $config['num_tag_open']   = '<li>';
         $config['num_tag_close']  = '</li>';
         $config["num_links"]      = round($config["total_rows"] / $config["per_page"]);
@@ -42,8 +43,8 @@ class Category extends CI_Controller
     {
         $data['listRecomend']     = $this->category_m->select_recomended_one($subcategory_seo)->result();
         $data['listMost']         = $this->category_m->select_most_popular_one($subcategory_seo)->result();
-        $config['uri_segment']    = 3;
-        $config['base_url']       = site_url() . 'category/subcategory';
+        $config['uri_segment']    = 5;
+        $config['base_url']       = site_url() . 'category/'.$this->uri->segment(2).'/'.$subcategory_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all_subcategory($subcategory_seo);
         $config['per_page']       = 10;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
@@ -54,8 +55,8 @@ class Category extends CI_Controller
         $config['next_link']      = '<i class="fa fa-chevron-right"></i>';
         $config['next_tag_open']  = '<li>';
         $config['next_tag_close'] = '</li>';
-        $config['cur_tag_open']   = '<li class="active">';
-        $config['cur_tag_close']  = '</li>';
+        $config['cur_tag_open']   = '<li class="active"><a href="#">';
+        $config['cur_tag_close']  = '</a></li>';
         $config['num_tag_open']   = '<li>';
         $config['num_tag_close']  = '</li>';
         $config["num_links"]      = round($config["total_rows"] / $config["per_page"]);
@@ -70,8 +71,8 @@ class Category extends CI_Controller
     {
         $data['listRecomend']     = $this->category_m->select_recomended_two($category_seo)->result();
         $data['listMost']         = $this->category_m->select_most_popular_two($category_seo)->result();
-        $config['uri_segment']    = 3;
-        $config['base_url']       = site_url() . 'category/subcategory';
+        $config['uri_segment']    = 6;
+        $config['base_url']       = site_url() . 'category/'.$this->uri->segment(2).'/'.$this->uri->segment(3).'/'.$category_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all_category($category_seo);
         $config['per_page']       = 10;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
@@ -82,8 +83,8 @@ class Category extends CI_Controller
         $config['next_link']      = '<i class="fa fa-chevron-right"></i>';
         $config['next_tag_open']  = '<li>';
         $config['next_tag_close'] = '</li>';
-        $config['cur_tag_open']   = '<li class="active">';
-        $config['cur_tag_close']  = '</li>';
+        $config['cur_tag_open']   = '<li class="active"><a href="#">';
+        $config['cur_tag_close']  = '</a></li>';
         $config['num_tag_open']   = '<li>';
         $config['num_tag_close']  = '</li>';
         $config["num_links"]      = round($config["total_rows"] / $config["per_page"]);

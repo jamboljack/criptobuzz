@@ -3,112 +3,55 @@
         <div class="row">
 
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 ">
-                <div class="slider_tiger wow fadeInLeft">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"><!-- US --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="1"><!-- ASIA --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="2"><!-- EU --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="3"><!-- GOLD --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="4"><!-- OIL --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="5"><!-- BONDS --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="6"><!-- EU FX --></li>
-                            <li data-target="#carousel-example-generic" data-slide-to="7"><!-- ASIA FX --></li>
-                        </ol>
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/us.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>US</h5>
-                                        <p class="triger">
-                                        Nasdaq closes at record, Dow rallies more than 400 points after jobs report</p>
-                                    </div>
-                                </div>
-                            </div><!--  end item active -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/asia.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>ASIA</h5>
-                                        <p class="triger" > Asian shares gain after Trump accepts invitation to meet North Korea's Kim; yen falls</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/eu.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>EU</h5>
-                                        <p class="triger">Europe finishes in the black after US adds 313K jobs in February</p>
-                                    </div>
-                                </div>
-                            </div><!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/gold.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>GOLD</h5>
-                                        <p class="triger">Gold recovers from drop after strong US jobs report</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/oil.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>OIL</h5>
-                                        <p class="triger">US oil closes 3.2% higher amid broad market optimism</p>
-                                    </div>
-                                </div>
-                            </div><!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/bonds.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>BONDS</h5>
-                                        <p class="triger">2-year yield climbs back to 9-year high after strong jobs report</p>
-                                    </div>
-                                </div>
-                            </div><!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/eu-fx.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>EU FX</h5>
-                                        <p class="triger">Dollar steady on mixed US jobs data, yen falls after BOJ meeting</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end item -->
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img src="assets/images/triger/asia-fx.png" alt="">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5>ASIA FX</h5>
-                                        <p class="triger">Dollar steady on mixed US jobs data, yen falls after BOJ meeting</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- TradingView Widget BEGIN -->
+                <!-- <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Quotes</span></a> by TradingView</div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+                    {
+                        "symbols": [
+                        {
+                          "title": "S&P 500",
+                          "proName": "INDEX:SPX"
+                        },
+                        {
+                          "title": "Nasdaq 100",
+                          "proName": "INDEX:IUXX"
+                        },
+                        {
+                          "title": "EUR/USD",
+                          "proName": "FX_IDC:EURUSD"
+                        },
+                        {
+                          "title": "BTC/USD",
+                          "proName": "BITFINEX:BTCUSD"
+                        },
+                        {
+                          "title": "ETH/USD",
+                          "proName": "BITFINEX:ETHUSD"
+                        }
+                      ],
+                        "locale": "en"
+                    }
+                    </script>
+                </div> -->
+                <!-- TradingView Widget END -->
+                <script type="text/javascript">
+                baseUrl = "https://widgets.cryptocompare.com/";
+                var scripts = document.getElementsByTagName("script");
+                var embedder = scripts[ scripts.length - 1 ];
+                var cccTheme = {"General":{"background":"#253137","float":"left","priceText":"#ebeef0"},"Menu":{"triggerBackground":"#465a65"}};
+                (function (){
+                var appName = encodeURIComponent(window.location.hostname);
+                if(appName==""){appName="local";}
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                var theUrl = baseUrl+'serve/v2/coin/header?fsyms=BTC,XMR,LTC,ETH&tsyms=EUR,CNY,GBP,USD';
+                s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                embedder.parentNode.appendChild(s);
+                })();
+                </script>
             </div>
 
             <div class="col-md-12 col-sm-12 col-xs-12 col-lg-8">
@@ -321,7 +264,7 @@
                     </div>
 
                     <div class="loadmore wow fadeInUp ">
-                        <a href="<?=site_url('latepost');?>" class="btn_large feature_stories text-center" data-load="Load More" data-loading="Loading..."> Load More</a>
+                        <a href="<?=site_url('article');?>" class="btn_large feature_stories text-center" data-load="Load More" data-loading="Loading..."> Load More</a>
                     </div>
                 </div>
                 
@@ -464,23 +407,40 @@
                                 <div class="coin-conver wow fadeInUp">
                                     <div class="exch_section">
                                         <div class="section-title text-center">
-                                            <h2>CRIPTOCOINS<br> CONVERTER</h2>
+                                            <h2>CRIPTOCOINS<br>CONVERTER</h2>
+                                            <script type="text/javascript">crypt_calc_background_color = "#fccf04";crypt_calc_transperency = false;crypt_calc_font_family = "Sans-Serif";</script><script type="text/javascript" src="https://www.cryptonator.com/ui/js/widget/calc_widget.js"></script>
+                                            <!-- <script type="text/javascript">
+                                            baseUrl = "https://widgets.cryptocompare.com/";
+                                            var scripts = document.getElementsByTagName("script");
+                                            var embedder = scripts[ scripts.length - 1 ];
+                                            var cccTheme = {"General":{"background":"#fccf04","borderWidth":"0px","borderColor":"#fccf04","headerText":"Crypto Coin Converter"},"Form":{"labelFrom":"","labelTo":""}};
+                                            (function (){
+                                            var appName = encodeURIComponent(window.location.hostname);
+                                            if(appName==""){appName="local";}
+                                            var s = document.createElement("script");
+                                            s.type = "text/javascript";
+                                            s.async = true;
+                                            var theUrl = baseUrl+'serve/v1/coin/converter?fsym=BTC&tsyms=USD,EUR,CNY,GBP';
+                                            s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                                            embedder.parentNode.appendChild(s);
+                                            })();
+                                            </script> -->
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="ico_calender_mini wow fadeInUp">
                                     <div class="has-no-title widget ico_calendar_widget-2 widget_ico_calendar_widget">
-                                        <span class="widget-title font-weight-bold">ICO CALENDAR</span>
+                                        <!-- <span class="widget-title font-weight-bold">ICO CALENDAR</span> -->
                                         <div class="ico-widget divider">
-                                            <div class="col-md-4">
+                                            <div class="col-md-12">
                                                 <div class="row">
-                                                        
+                                                     <iframe src="https://investingwidgets.com/ico-calendar?theme=darkTheme" width="100%" height="500px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=ICO_CALENDAR&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>   
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="view_all text-center">
-                                            <a href="<?=site_url('ico');?>" class="btn_large view_all text-center" data-load="Load More" data-loading="Loading..."> View all ICOs</a>
+                                            <a href="<?=site_url('ico-calendar');?>" class="btn_large view_all text-center" data-load="Load More" data-loading="Loading..."> View all ICO</a>
                                         </div>
                                     </div>
                                 </div>

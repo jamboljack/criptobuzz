@@ -150,15 +150,15 @@ $contact = $this->menu_m->select_contact()->row();
                         <?php } 
                         } 
                         ?>
-                        <li class="#"><a href="<?=site_url('calender');?>">ico calender</a></li>
+                        <li class="#"><a href="<?=site_url('ico-calendar');?>">ICO CALENDAR</a></li>
                     </ul>
                 </nav>
             </div>
             <div class="col-md-3 hidden-xs hidden-sm">
                 <div class="search-column">
-                    <form class="st_search_box">
+                    <form class="st_search_box" method="post" action="<?=site_url('search/lookdata');?>">
                         <div>
-                            <input type="search" placeholder="search">
+                            <input type="text" placeholder="Search.." name="search" autocomplete="off" required>
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>
@@ -184,3 +184,28 @@ if (!empty($TopBanner->banner_image)) {
     </div>
 </section>
 <?php }?>
+<!-- 
+<section class="clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <script type="text/javascript">
+                baseUrl = "https://widgets.cryptocompare.com/";
+                var scripts = document.getElementsByTagName("script");
+                var embedder = scripts[ scripts.length - 1 ];
+                var cccTheme = {"General":{"background":"#253137","priceText":"#ebeef0"},"Menu":{"triggerBackground":"#465a65"}};
+                (function (){
+                var appName = encodeURIComponent(window.location.hostname);
+                if(appName==""){appName="local";}
+                var s = document.createElement("script");
+                s.type = "text/javascript";
+                s.async = true;
+                var theUrl = baseUrl+'serve/v2/coin/header?fsyms=BTC,ETH,XMR,LTC&tsyms=EUR,CNY,GBP';
+                s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+                embedder.parentNode.appendChild(s);
+                })();
+                </script>
+            </div>
+        </div>
+    </div>
+</section> -->

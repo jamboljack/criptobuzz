@@ -11,9 +11,31 @@ class Article extends CI_Controller
         $this->load->model('article_m');
     }
 
-    public function index($maincategory_seo, $offset = 0)
+    public function index($offset = 0)
     {
-        redirect(site_url('my_error'));
+        $data['listRecomend']     = $this->article_m->select_recomended()->result();
+        $data['listMost']         = $this->article_m->select_most_popular()->result();
+        $config['uri_segment']    = 3;
+        $config['base_url']       = site_url() . 'article/index';
+        $config['total_rows']     = $this->article_m->count_all();
+        $config['per_page']       = 10;
+        $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
+        $config['full_tag_close'] = '</ul></div>';
+        $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';
+        $config['prev_tag_open']  = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['next_link']      = '<i class="fa fa-chevron-right"></i>';
+        $config['next_tag_open']  = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['cur_tag_open']   = '<li class="active"><a href="#">';
+        $config['cur_tag_close']  = '</a></li>';
+        $config['num_tag_open']   = '<li>';
+        $config['num_tag_close']  = '</li>';
+        $config["num_links"]      = round($config["total_rows"] / $config["per_page"]);
+        $this->pagination->initialize($config);
+        $data['pages']       = $this->pagination->create_links();
+        $data['listArticle'] = $this->article_m->select_article($config['per_page'], $offset)->result();
+        $this->template_front->display('front/article_view', $data);
     }
 
     public function detail($article_seo)
@@ -29,14 +51,13 @@ class Article extends CI_Controller
             $this->db->where('article_seo', $article_seo);
             $this->db->update('cripto_article', $dataRead);
 
-            $data['listRecomend'] = $this->article_m->select_recomended($article_seo)->result();
-            $data['listMost']     = $this->article_m->select_most_popular($article_seo)->result();
+            $data['listRecomend'] = $this->article_m->select_recomended()->result();
+            $data['listMost']     = $this->article_m->select_most_popular()->result();
             $data['detail']       = $this->article_m->select_by_id($article_seo)->row();
             $data['editor']       = $this->article_m->select_editor_by_id($article_seo)->row();
             $data['listOther']    = $this->article_m->select_other($article_seo)->result();
             $data['listComment']  = $this->article_m->select_list_comment($article_seo)->result();
-
-            $this->template_front->display('front/article_view', $data);
+            $this->template_front->display('front/article_detail_view', $data);
         }
     }
 

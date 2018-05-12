@@ -48,7 +48,6 @@ class Category extends CI_Controller
                         <a onclick="hapusData(' . $category_id . ')" title="Delete Data">
                             <i class="icon-close"></i>
                         </a>';
-
             $row[] = $no;
             $row[] = $r->maincategory_name;
             $row[] = $r->subcategory;
