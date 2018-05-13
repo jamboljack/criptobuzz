@@ -18,7 +18,7 @@ class Article extends CI_Controller
         $config['uri_segment']    = 3;
         $config['base_url']       = site_url() . 'article/index';
         $config['total_rows']     = $this->article_m->count_all();
-        $config['per_page']       = 10;
+        $config['per_page']       = 15;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
         $config['full_tag_close'] = '</ul></div>';
         $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';

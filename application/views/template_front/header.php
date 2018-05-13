@@ -29,7 +29,7 @@ $contact = $this->menu_m->select_contact()->row();
                     <a href="#" data-toggle="modal" data-target="#login-modal"><span><i class="fa fa-lock"></i></span>Sign In</a>
                     <a href="#" data-toggle="modal" data-target="#register-modal"><span><i class="fa fa-user"></i></span>Sign Up</a>
                     <?php } else { ?>
-                    Welcome, <?=$this->session->userdata('username_member');?>&nbsp
+                    Welcome, <a href="<?=site_url('profil');?>"><?=$this->session->userdata('username_member');?></a>&nbsp
                     <a href="<?=site_url('login/logout');?>"><i class="fa fa-sign-out"></i>Sign Out</a>
                     <?php } ?>
                 </div>
@@ -158,7 +158,7 @@ $contact = $this->menu_m->select_contact()->row();
                 <div class="search-column">
                     <form class="st_search_box" method="post" action="<?=site_url('search/lookdata');?>">
                         <div>
-                            <input type="text" placeholder="Search.." name="search" autocomplete="off" required>
+                            <input type="text" placeholder="Search.." name="search" value="<?=set_value('search');?>" autocomplete="off" required>
                             <button type="submit"><i class="fa fa-search"></i></button>
                         </div>
                     </form>

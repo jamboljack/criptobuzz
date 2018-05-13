@@ -13,6 +13,7 @@ class Search_m extends CI_Model
         $this->db->select('*');
         $this->db->from('v_article');
         $this->db->like('article_title', $keyword);
+        $this->db->or_like('article_desc', $keyword);
         $this->db->order_by('article_id', 'desc');
 
         return $this->db->get();

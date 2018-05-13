@@ -431,8 +431,9 @@
                                 
                                 <div class="ico_calender_mini wow fadeInUp">
                                     <div class="has-no-title widget ico_calendar_widget-2 widget_ico_calendar_widget">
+                                        <iframe src="https://investingwidgets.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=TOP_CRYPTOCURRENCIES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
                                         <!-- <span class="widget-title font-weight-bold">ICO CALENDAR</span> -->
-                                        <div class="ico-widget divider">
+                                        <!-- <div class="ico-widget divider">
                                             <div class="col-md-12">
                                                 <div class="row">
                                                      <iframe src="https://investingwidgets.com/ico-calendar?theme=darkTheme" width="100%" height="500px" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=ICO_CALENDAR&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>   
@@ -441,7 +442,7 @@
                                         </div>
                                         <div class="view_all text-center">
                                             <a href="<?=site_url('ico-calendar');?>" class="btn_large view_all text-center" data-load="Load More" data-loading="Loading..."> View all ICO</a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
 

@@ -21,6 +21,7 @@ class Search extends CI_Controller
         if (empty($keyword)) {
             redirect(site_url('my_error'));
         } else {
+            $data['keyword']      = $keyword;
             $data['listRecomend'] = $this->search_m->select_recomended()->result();
             $data['listMost']     = $this->search_m->select_most_popular()->result();
             $data['listArticle']  = $this->search_m->select_article($keyword)->result();

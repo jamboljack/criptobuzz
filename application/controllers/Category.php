@@ -18,7 +18,7 @@ class Category extends CI_Controller
         $config['uri_segment']    = 4;
         $config['base_url']       = site_url() . 'category/'.$maincategory_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all($maincategory_seo);
-        $config['per_page']       = 10;
+        $config['per_page']       = 15;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
         $config['full_tag_close'] = '</ul></div>';
         $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';
@@ -46,7 +46,7 @@ class Category extends CI_Controller
         $config['uri_segment']    = 5;
         $config['base_url']       = site_url() . 'category/'.$this->uri->segment(2).'/'.$subcategory_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all_subcategory($subcategory_seo);
-        $config['per_page']       = 10;
+        $config['per_page']       = 15;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
         $config['full_tag_close'] = '</ul></div>';
         $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';
@@ -74,7 +74,7 @@ class Category extends CI_Controller
         $config['uri_segment']    = 6;
         $config['base_url']       = site_url() . 'category/'.$this->uri->segment(2).'/'.$this->uri->segment(3).'/'.$category_seo.'/page';
         $config['total_rows']     = $this->category_m->count_all_category($category_seo);
-        $config['per_page']       = 10;
+        $config['per_page']       = 15;
         $config['full_tag_open']  = '<div class="pagi text-center"><ul class="pagination">';
         $config['full_tag_close'] = '</ul></div>';
         $config['prev_link']      = '<i class="fa fa-chevron-left"></i>';

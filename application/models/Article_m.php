@@ -9,7 +9,7 @@ class Article_m extends CI_Model
         parent::__construct();
     }
 
-    function select_article($limit = 10, $offset = 0) {
+    function select_article($limit = 15, $offset = 0) {
         $this->db->select('*');
         $this->db->from('v_article');
         $this->db->order_by('article_id', 'desc');
