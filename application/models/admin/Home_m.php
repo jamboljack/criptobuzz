@@ -9,34 +9,35 @@ class Home_m extends CI_Model
         parent::__construct();
     }
 
-    public function select_education()
+    public function select_article()
     {
-        $this->db->select('COUNT(education_id) as total');
-        $this->db->from('my_education');
+        $this->db->select('COUNT(article_id) as total');
+        $this->db->from('cripto_article');
 
         return $this->db->get();
     }
 
-    public function select_experience()
+    public function select_science()
     {
-        $this->db->select('COUNT(experience_id) as total');
-        $this->db->from('my_experience');
+        $this->db->select('COUNT(science_id) as total');
+        $this->db->from('cripto_science');
 
         return $this->db->get();
     }
 
-    public function select_skill()
+    public function select_subcscribe()
     {
-        $this->db->select('COUNT(skill_id) as total');
-        $this->db->from('my_skill');
+        $this->db->select('COUNT(subscribe_id) as total');
+        $this->db->from('cripto_subscribe');
 
         return $this->db->get();
     }
 
-    public function select_work()
+    public function select_member()
     {
-        $this->db->select('COUNT(work_id) as total');
-        $this->db->from('my_work');
+        $this->db->select('COUNT(user_username) as total');
+        $this->db->from('cripto_users');
+        $this->db->where('user_level', 'Member');
 
         return $this->db->get();
     }

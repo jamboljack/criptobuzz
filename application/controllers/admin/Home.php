@@ -17,11 +17,11 @@ class Home extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('logged_in_cripto')) {
-            // $data['education']  = $this->home_m->select_education()->row();
-            // $data['experience'] = $this->home_m->select_experience()->row();
-            // $data['skill']      = $this->home_m->select_skill()->row();
-            // $data['work']       = $this->home_m->select_work()->row();
-            $this->template->display('admin/home_view');
+            $data['article']   = $this->home_m->select_article()->row();
+            $data['science']   = $this->home_m->select_science()->row();
+            $data['subscribe'] = $this->home_m->select_subcscribe()->row();
+            $data['member']    = $this->home_m->select_member()->row();
+            $this->template->display('admin/home_view', $data);
         } else {
             $this->session->sess_destroy();
             redirect(base_url());

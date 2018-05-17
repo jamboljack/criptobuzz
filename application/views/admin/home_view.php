@@ -19,17 +19,17 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat blue-madison">
                     <div class="visual">
-                        <i class="fa fa-university"></i>
+                        <i class="icon-notebook"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            
+                            <?=number_format($article->total,0,'','');?>
                         </div>
                         <div class="desc">
-                            Education
+                            Article
                         </div>
                     </div>
-                    <a class="more" href="<?=site_url('admin/education');?>">
+                    <a class="more" href="<?=site_url('admin/article');?>">
                     View <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -37,17 +37,17 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat red-intense">
                     <div class="visual">
-                        <i class="fa fa-graduation-cap"></i>
+                        <i class="icon-social-youtube"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            
+                            <?=number_format($science->total,0,'','');?>
                         </div>
                         <div class="desc">
-                            Experience
+                            Science
                         </div>
                     </div>
-                    <a class="more" href="<?=site_url('admin/experience');?>">
+                    <a class="more" href="<?=site_url('admin/science');?>">
                     View <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -55,17 +55,17 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat purple-plum">
                     <div class="visual">
-                        <i class="fa fa-asterisk"></i>
+                        <i class="icon-envelope"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            
+                            <?=number_format($subscribe->total,0,'','');?>
                         </div>
                         <div class="desc">
-                            Skills
+                            Subscriber
                         </div>
                     </div>
-                    <a class="more" href="<?=site_url('admin/skill');?>">
+                    <a class="more" href="<?=site_url('admin/subscribe');?>">
                     View <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
@@ -73,17 +73,17 @@
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="dashboard-stat green-haze">
                     <div class="visual">
-                        <i class="fa fa-tasks"></i>
+                        <i class="icon-users"></i>
                     </div>
                     <div class="details">
                         <div class="number">
-                            
+                            <?=number_format($member->total,0,'','');?>
                         </div>
                         <div class="desc">
-                            Works
+                            Member
                         </div>
                     </div>
-                    <a class="more" href="<?=site_url('admin/work');?>">
+                    <a class="more" href="<?=site_url('admin/users');?>">
                     View <i class="m-icon-swapright m-icon-white"></i>
                     </a>
                 </div>
