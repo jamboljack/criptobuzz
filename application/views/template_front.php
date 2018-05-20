@@ -8,7 +8,13 @@ $meta = $this->menu_m->select_meta()->row();
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title><?=$meta->meta_name;?></title>
         <link rel="shortcut icon" href="<?=base_url('img/logo-icon.png');?>">
-        <meta name="description" content="">
+        <meta name="keywords" content="<?=$meta->meta_keyword;?>" />
+        <meta name="description" content="<?=$meta->meta_desc;?>" />
+        <meta name="Distribution" content="Global">
+        <meta name="Author" content="<?=$meta->meta_author;?>">
+        <meta name="Developer" content="<?=$meta->meta_developer;?>">
+        <meta name="robots" content="<?=$meta->meta_robots;?>" />
+        <meta name="Googlebot" content="<?=$meta->meta_googlebots;?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.html">
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,700italic,800,800italic,600italic,400italic,300italic' rel='stylesheet' type='text/css'>
