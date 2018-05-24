@@ -400,7 +400,7 @@
             </div>
 
             <div class="col-md-4 sidebars">
-                <div class="sidebar_homepage">
+                <div class="sidebar_homepage_edit">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-4">
@@ -431,7 +431,7 @@
                                 
                                 <div class="ico_calender_mini wow fadeInUp">
                                     <div class="has-no-title widget ico_calendar_widget-2 widget_ico_calendar_widget">
-                                        <iframe src="https://investingwidgets.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;"><a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=TOP_CRYPTOCURRENCIES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow"></a></div>
+                                        <iframe src="https://investingwidgets.com/top-cryptocurrencies?theme=darkTheme&roundedCorners=true" width="100%" height="600" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0"></iframe><div class="poweredBy" style="font-family: Arial, Helvetica, sans-serif;">Powered by <a href="https://www.investing.com?utm_source=WMT&amp;utm_medium=referral&amp;utm_campaign=TOP_CRYPTOCURRENCIES&amp;utm_content=Footer%20Link" target="_blank" rel="nofollow">Investing.com</a></div>
                                         <!-- <span class="widget-title font-weight-bold">ICO CALENDAR</span> -->
                                         <!-- <div class="ico-widget divider">
                                             <div class="col-md-12">

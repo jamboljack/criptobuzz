@@ -42,6 +42,58 @@ alternatif text=#53585c
 */
 
 @import url('data:application/octet-stream;base64,QGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogMzAwOwogIHNyYzogbG9jYWwoJ09wZW4gU2FucyBMaWdodCcpLCBsb2NhbCgnT3BlblNhbnMtTGlnaHQnKSwgdXJsKGh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20vcy9vcGVuc2Fucy92MTUvbWVtNVlhR3MxMjZNaVpwQkEtVU5fcjhPVXVocy50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ09wZW4gU2Fucyc7CiAgZm9udC1zdHlsZTogbm9ybWFsOwogIGZvbnQtd2VpZ2h0OiA0MDA7CiAgc3JjOiBsb2NhbCgnT3BlbiBTYW5zIFJlZ3VsYXInKSwgbG9jYWwoJ09wZW5TYW5zLVJlZ3VsYXInKSwgdXJsKGh0dHBzOi8vZm9udHMuZ3N0YXRpYy5jb20vcy9vcGVuc2Fucy92MTUvbWVtOFlhR3MxMjZNaVpwQkEtVUZWWjBlLnR0ZikgZm9ybWF0KCd0cnVldHlwZScpOwp9CkBmb250LWZhY2UgewogIGZvbnQtZmFtaWx5OiAnT3BlbiBTYW5zJzsKICBmb250LXN0eWxlOiBub3JtYWw7CiAgZm9udC13ZWlnaHQ6IDYwMDsKICBzcmM6IGxvY2FsKCdPcGVuIFNhbnMgU2VtaUJvbGQnKSwgbG9jYWwoJ09wZW5TYW5zLVNlbWlCb2xkJyksIHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3Mvb3BlbnNhbnMvdjE1L21lbTVZYUdzMTI2TWlacEJBLVVOaXJrT1V1aHMudHRmKSBmb3JtYXQoJ3RydWV0eXBlJyk7Cn0KQGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogNzAwOwogIHNyYzogbG9jYWwoJ09wZW4gU2FucyBCb2xkJyksIGxvY2FsKCdPcGVuU2Fucy1Cb2xkJyksIHVybChodHRwczovL2ZvbnRzLmdzdGF0aWMuY29tL3Mvb3BlbnNhbnMvdjE1L21lbTVZYUdzMTI2TWlacEJBLVVON3JnT1V1aHMudHRmKSBmb3JtYXQoJ3RydWV0eXBlJyk7Cn0KQGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdPcGVuIFNhbnMnOwogIGZvbnQtc3R5bGU6IG5vcm1hbDsKICBmb250LXdlaWdodDogODAwOwogIHNyYzogbG9jYWwoJ09wZW4gU2FucyBFeHRyYUJvbGQnKSwgbG9jYWwoJ09wZW5TYW5zLUV4dHJhQm9sZCcpLCB1cmwoaHR0cHM6Ly9mb250cy5nc3RhdGljLmNvbS9zL29wZW5zYW5zL3YxNS9tZW01WWFHczEyNk1pWnBCQS1VTjhyc09VdWhzLnR0ZikgZm9ybWF0KCd0cnVldHlwZScpOwp9Cg==');
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 /* ==== general ====*/
 
 html, body {
@@ -474,7 +526,7 @@ a:hover, a:focus, a:active {
 }
 .st_search_box div input {
     /* border: 1px solid #636363; */
-    color: #000;
+    color: #636363;
     font-size: 14px;
     /* height: 30px; */
     line-height: 24px;
@@ -579,6 +631,36 @@ p.triger {
 .glyphicon-chevron-right:before {
     content: "";
 }
+.tv-embed-widget-wrapper__body{
+    border: 1px solid #dadde0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    overflow: hidden;
+    max-width: 100%;
+    width: 750px !important;
+   
+}
+.tradingview-widget-container, .tv-embed-widget-wrapper {
+    width: 750px !important;
+    /*min-width: 100%;*/
+    max-width: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    background: transparent;
+    
+}
+
+.tv-widget-ticker__item {
+    display: table-cell;
+    position: relative;
+    padding: 10px 15px !important;
+    height: 50px;
+    border-left: 1px solid transparent;
+    background-clip: padding-box;
+    vertical-align: top;
+    color: #4a4a4a;
+    -webkit-transform: translateZ(0);
+}
 /* end slider tiger */
 
 .caraousel-caption {
@@ -591,6 +673,13 @@ p.triger {
 .top {
     margin-top: -70px;
 }
+
+.no-js .owl-carousel, .owl-carousel.owl-loaded {
+    display: block;
+    margin-top: 20px
+    
+}
+    
 .caraousel-caption {
     color: #fff!important;
     position: relative;
@@ -880,12 +969,12 @@ a.post_category_bottom {
 a.post_category_litle {
     color: #000;
     background: #fccf04;
-    padding: 0px 4px;
+    padding: 0px 9px;
     display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: .5px;
-    margin: 110px 19px;
+    letter-spacing: 0.3px;
+    margin: 75px 13px;
     position: absolute;
 }
 .post_popular {
@@ -902,6 +991,8 @@ a.post_category_litle {
     font-weight: 700;
     text-transform: capitalize;
 }
+
+
 /* .meta_post span {
         margin: 0 10px;} */
 
@@ -1378,6 +1469,7 @@ section.bussines_latest_post.clearfix {
     z-index: 1;
     margin-right: 20px;
     margin-top: 0px;
+    max-height: 100px;
 }
 .scien_mg_10 {
     margin-top: 20px;
@@ -1781,7 +1873,10 @@ a.nav_previews.disabled a::after {
 .section-title.latest_postmore {
     margin-top: -1130px;
 }
-.post.latest_post {}
+.post.latest_post { 
+    padding: 12px 0;
+    float: left;
+}
 /*   .pagination > li > a, .pagination > li > .page-numbers .zm-pgi-dots{
         position: relative;
         float: left;
@@ -1836,7 +1931,8 @@ a.nav_previews.disabled a::after {
     background: #fccf04;
     width: 97px;
     height: 3px;
-    left: 13px;
+    left: 0;
+    margin-left: 15px;
     /* top: 59px; */
     margin-top: 32px;
 }
@@ -1889,10 +1985,11 @@ a.nav_previews.disabled a::after {
             right: 0;*/
 }
 .sidebar_homepage {
-    position: relative;
-    left: 780px;
+     position: relative;
+    /* left: 780px; */
     right: 0;
-    margin-top: -2500px;
+    margin-left: -15px;
+    margin-top: -92px;
 }
 /* =======>
                 tambhan edit home
@@ -1903,7 +2000,7 @@ a.nav_previews.disabled a::after {
     position: relative;
     left: -12px;
     right: 0;
-    margin-top: 350px;
+    /*margin-top: 350px;*/
 }
 .loadmore a::after, .loadmore a::before {
     content: "";
@@ -2776,7 +2873,8 @@ span.icon-detailed {
        =======================*/
 
 .coin-conver {
-    margin: -340px 0 30px;
+    /*margin: -444px 0 30px;*/
+    margin-bottom:30px;
 }
 .exch_section {
     padding: 5px 20px;
@@ -2854,6 +2952,8 @@ span.icon-detailed {
     color: #fff;
 }
 /*cryptonatorwidget*/
+
+ 
 
 .cryptonatorwidget {
     border-radius: 4px;
@@ -3036,6 +3136,9 @@ a.btn.ico-read-analysis:hover {
     border: 1px solid #faa61a;
     cursor: pointer;
 }
+
+
+
 /* =======================
                 modal pop up 
        =======================*/
@@ -3422,23 +3525,24 @@ footer {
 }
 .newsletter .email_input {
     background: none repeat scroll 0px 0px #fff;
-    border: 0px none;
-    color: #000;
+    border: none;
+    color: #636363;
     float: left;
     font-size: 13px;
     font-weight: 600;
     height: 39px;
     line-height: 39px;
-    padding: 0px 7px;
+    padding: 0  7px;
     width: 100%;
 }
 .newsletter .email_submit {
-    padding: 0 10px 0 10px;
+    /*padding: 0 10px 0 10px;*/
     margin: -39px 0px;
     float: right;
-    height: 39px;
+    height: 40px;
     color: #fff;
-    border: 1px solid #1c306a;
+    border: 1px;
+    border-color: #1c306a; 
     background-color: #1c306a;
 }
 p.litle {
